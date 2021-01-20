@@ -20,16 +20,39 @@ public class Hotel {
     @JsonSerialize(using = ToStringSerializer.class)
     private ObjectId hotel_id;
     private String izena;
-    private float distantzia;
+    private int postaKodea;
+    private String distantzia;
     private String kokalekua;
     private String herrialdea;
     private String helbidea;
     private int izarrak;
-    private float kalifikazioa;
-    private float kostuGaua;
-    private String argazkia;
+    private double kalifikazioa;
+    private double kostuGaua;
+    private List<Argazkia> argazkiak;
     private String info;
-    private List<String> zerbitzuak;
+    private String infoGenerala;
+    private List<Zerbitzua> zerbitzuak;
+
+    public Hotel() {
+        
+    }
+
+    public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, double kostuGaua, List<Argazkia> argazkiak, String info, String infoGenerala, List<Zerbitzua> zerbitzuak) {
+        this.hotel_id = hotel_id;
+        this.izena = izena;
+        this.postaKodea = postaKodea;
+        this.distantzia = distantzia;
+        this.kokalekua = kokalekua;
+        this.herrialdea = herrialdea;
+        this.helbidea = helbidea;
+        this.izarrak = izarrak;
+        this.kalifikazioa = kalifikazioa;
+        this.kostuGaua = kostuGaua;
+        this.argazkiak = argazkiak;
+        this.info = info;
+        this.infoGenerala = infoGenerala;
+        this.zerbitzuak = zerbitzuak;
+    }
 
     public ObjectId getHotel_id() {
         return hotel_id;
@@ -47,11 +70,19 @@ public class Hotel {
         this.izena = izena;
     }
 
-    public float getDistantzia() {
+    public int getPostaKodea() {
+        return postaKodea;
+    }
+
+    public void setPostaKodea(int postaKodea) {
+        this.postaKodea = postaKodea;
+    }
+
+    public String getDistantzia() {
         return distantzia;
     }
 
-    public void setDistantzia(float distantzia) {
+    public void setDistantzia(String distantzia) {
         this.distantzia = distantzia;
     }
 
@@ -87,28 +118,28 @@ public class Hotel {
         this.izarrak = izarrak;
     }
 
-    public float getKalifikazioa() {
+    public double getKalifikazioa() {
         return kalifikazioa;
     }
 
-    public void setKalifikazioa(float kalifikazioa) {
+    public void setKalifikazioa(double kalifikazioa) {
         this.kalifikazioa = kalifikazioa;
     }
 
-    public float getKostuGaua() {
+    public double getKostuGaua() {
         return kostuGaua;
     }
 
-    public void setKostuGaua(float kostuGaua) {
+    public void setKostuGaua(double kostuGaua) {
         this.kostuGaua = kostuGaua;
     }
 
-    public String getArgazkia() {
-        return argazkia;
+    public List<Argazkia> getArgazkiak() {
+        return argazkiak;
     }
 
-    public void setArgazkia(String argazkia) {
-        this.argazkia = argazkia;
+    public void setArgazkiak(List<Argazkia> argazkiak) {
+        this.argazkiak = argazkiak;
     }
 
     public String getInfo() {
@@ -119,35 +150,30 @@ public class Hotel {
         this.info = info;
     }
 
-    public List<String> getZerbitzuak() {
+    public String getInfoGenerala() {
+        return infoGenerala;
+    }
+
+    public void setInfoGenerala(String infoGenerala) {
+        this.infoGenerala = infoGenerala;
+    }
+
+    public List<Zerbitzua> getZerbitzuak() {
         return zerbitzuak;
     }
 
-    public void setZerbitzuak(List<String> zerbitzuak) {
+    public void setZerbitzuak(List<Zerbitzua> zerbitzuak) {
         this.zerbitzuak = zerbitzuak;
     }
 
     @Override
     public String toString() {
-        return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", kostuGaua=" + kostuGaua + ", argazkia=" + argazkia + ", info=" + info + ", zerbitzuak=" + zerbitzuak + '}';
+        return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", kostuGaua=" + kostuGaua + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", zerbitzuak=" + zerbitzuak + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.hotel_id);
-        hash = 89 * hash + Objects.hashCode(this.izena);
-        hash = 89 * hash + Float.floatToIntBits(this.distantzia);
-        hash = 89 * hash + Objects.hashCode(this.kokalekua);
-        hash = 89 * hash + Objects.hashCode(this.herrialdea);
-        hash = 89 * hash + Objects.hashCode(this.helbidea);
-        hash = 89 * hash + this.izarrak;
-        hash = 89 * hash + Float.floatToIntBits(this.kalifikazioa);
-        hash = 89 * hash + Float.floatToIntBits(this.kostuGaua);
-        hash = 89 * hash + Objects.hashCode(this.argazkia);
-        hash = 89 * hash + Objects.hashCode(this.info);
-        hash = 89 * hash + Objects.hashCode(this.zerbitzuak);
-        return hash;
+        return Objects.hash(hotel_id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, kostuGaua, argazkiak, info, infoGenerala, zerbitzuak);
     }
 
     @Override
@@ -162,19 +188,22 @@ public class Hotel {
             return false;
         }
         final Hotel other = (Hotel) obj;
-        if (Float.floatToIntBits(this.distantzia) != Float.floatToIntBits(other.distantzia)) {
+        if (this.postaKodea != other.postaKodea) {
             return false;
         }
         if (this.izarrak != other.izarrak) {
             return false;
         }
-        if (Float.floatToIntBits(this.kalifikazioa) != Float.floatToIntBits(other.kalifikazioa)) {
+        if (Double.doubleToLongBits(this.kalifikazioa) != Double.doubleToLongBits(other.kalifikazioa)) {
             return false;
         }
-        if (Float.floatToIntBits(this.kostuGaua) != Float.floatToIntBits(other.kostuGaua)) {
+        if (Double.doubleToLongBits(this.kostuGaua) != Double.doubleToLongBits(other.kostuGaua)) {
             return false;
         }
         if (!Objects.equals(this.izena, other.izena)) {
+            return false;
+        }
+        if (!Objects.equals(this.distantzia, other.distantzia)) {
             return false;
         }
         if (!Objects.equals(this.kokalekua, other.kokalekua)) {
@@ -186,13 +215,16 @@ public class Hotel {
         if (!Objects.equals(this.helbidea, other.helbidea)) {
             return false;
         }
-        if (!Objects.equals(this.argazkia, other.argazkia)) {
-            return false;
-        }
         if (!Objects.equals(this.info, other.info)) {
             return false;
         }
+        if (!Objects.equals(this.infoGenerala, other.infoGenerala)) {
+            return false;
+        }
         if (!Objects.equals(this.hotel_id, other.hotel_id)) {
+            return false;
+        }
+        if (!Objects.equals(this.argazkiak, other.argazkiak)) {
             return false;
         }
         if (!Objects.equals(this.zerbitzuak, other.zerbitzuak)) {
@@ -200,6 +232,4 @@ public class Hotel {
         }
         return true;
     }
-    
-    
 }

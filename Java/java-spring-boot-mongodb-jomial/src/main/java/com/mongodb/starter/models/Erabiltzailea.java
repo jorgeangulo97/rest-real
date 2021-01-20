@@ -6,15 +6,17 @@
 package com.mongodb.starter.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import java.util.Objects;
 import org.bson.types.ObjectId;
 
-import java.util.Objects;
-
-@JsonInclude(Include.NON_NULL)
-public class Erabiltzailea {
+/**
+ *
+ * @author angulo.jorge
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Erabiltzailea{
 
     @JsonSerialize(using = ToStringSerializer.class)
     private ObjectId erabiltzailea_id;
@@ -23,6 +25,18 @@ public class Erabiltzailea {
     private String emaila;
     private String erabiltzailea;
     private String pasahitza;
+
+    public Erabiltzailea() {
+    }
+
+    public Erabiltzailea(ObjectId erabiltzailea_id, String izena, String abizena, String emaila, String erabiltzailea, String pasahitza) {
+        this.erabiltzailea_id = erabiltzailea_id;
+        this.izena = izena;
+        this.abizena = abizena;
+        this.emaila = emaila;
+        this.erabiltzailea = erabiltzailea;
+        this.pasahitza = pasahitza;
+    }
 
     public ObjectId getErabiltzailea_id() {
         return erabiltzailea_id;
@@ -73,15 +87,13 @@ public class Erabiltzailea {
     }
 
     @Override
+    public String toString() {
+        return "Erabiltzailea{" + "erabiltzailea_id=" + erabiltzailea_id + ", izena=" + izena + ", abizena=" + abizena + ", emaila=" + emaila + ", erabiltzailea=" + erabiltzailea + ", pasahitza=" + pasahitza + '}';
+    }
+    
+    @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 61 * hash + Objects.hashCode(this.erabiltzailea_id);
-        hash = 61 * hash + Objects.hashCode(this.izena);
-        hash = 61 * hash + Objects.hashCode(this.abizena);
-        hash = 61 * hash + Objects.hashCode(this.emaila);
-        hash = 61 * hash + Objects.hashCode(this.erabiltzailea);
-        hash = 61 * hash + Objects.hashCode(this.pasahitza);
-        return hash;
+        return Objects.hash(erabiltzailea_id, izena, abizena, emaila, erabiltzailea, pasahitza);
     }
 
     @Override
@@ -116,5 +128,4 @@ public class Erabiltzailea {
         }
         return true;
     }
-    
 }
