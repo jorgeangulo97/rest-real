@@ -27,10 +27,10 @@ Jomial
 	
 	Errenta: 
 		-ObjectId errenta_id
-		-date hasiera_data
-		-date amaiera_data
-		-ObjectId hotel_id (Meter el objeto entero de Hotel)
-		-ObjectId erabiltzailea_id (Meter el objeto entero de Erabiltzailea)
+		-String hasiera_data
+		-String amaiera_data
+		-Hotel hotel (Meter el objeto entero de Hotel)
+		-Erabiltzailea erabiltzailea (Meter el objeto entero de Erabiltzailea)
 		-int txartel_zenbakia
 		-String txartel_titularra
 		-data txartel_iraunginpena

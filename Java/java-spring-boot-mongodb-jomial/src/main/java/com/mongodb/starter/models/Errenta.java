@@ -8,7 +8,6 @@ package com.mongodb.starter.models;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import java.util.Date;
 import java.util.Objects;
 import org.bson.types.ObjectId;
 
@@ -21,27 +20,27 @@ public class Errenta{
 
     @JsonSerialize(using = ToStringSerializer.class)
     private ObjectId errenta_id;
-    private Date hasiera_data;
-    private Date amaiera_data;
-    private ObjectId hotel_id;
-    private ObjectId erabiltzailea_id;
+    private String hasiera_data;
+    private String amaiera_data;
+    private Hotel hotel;
+    private Erabiltzailea erabiltzailea;
     private int txartel_zenbakia;
     private String txartel_titularra;
-    private Date txartel_iraunginpena;
+    private String txartel_iraunginpena;
     private int txartel_cvv;
 
     public Errenta() {
     }
 
-    public Errenta(ObjectId errenta_id, Date hasiera_data, Date amaiera_data, ObjectId hotel_id, ObjectId erabiltzailea_id, int txartel_zenbakia, String txartel_titularra, Date txatel_iraunginpena, int txartel_cvv) {
+    public Errenta(ObjectId errenta_id, String hasiera_data, String amaiera_data, Hotel hotel, Erabiltzailea erabiltzailea, int txartel_zenbakia, String txartel_titularra, String txartel_iraunginpena, int txartel_cvv) {
         this.errenta_id = errenta_id;
         this.hasiera_data = hasiera_data;
         this.amaiera_data = amaiera_data;
-        this.hotel_id = hotel_id;
-        this.erabiltzailea_id = erabiltzailea_id;
+        this.hotel = hotel;
+        this.erabiltzailea = erabiltzailea;
         this.txartel_zenbakia = txartel_zenbakia;
         this.txartel_titularra = txartel_titularra;
-        this.txartel_iraunginpena = txatel_iraunginpena;
+        this.txartel_iraunginpena = txartel_iraunginpena;
         this.txartel_cvv = txartel_cvv;
     }
 
@@ -53,36 +52,36 @@ public class Errenta{
         this.errenta_id = errenta_id;
     }
 
-    public Date getHasiera_data() {
+    public String getHasiera_data() {
         return hasiera_data;
     }
 
-    public void setHasiera_data(Date hasiera_data) {
+    public void setHasiera_data(String hasiera_data) {
         this.hasiera_data = hasiera_data;
     }
 
-    public Date getAmaiera_data() {
+    public String getAmaiera_data() {
         return amaiera_data;
     }
 
-    public void setAmaiera_data(Date amaiera_data) {
+    public void setAmaiera_data(String amaiera_data) {
         this.amaiera_data = amaiera_data;
     }
 
-    public ObjectId getHotel_id() {
-        return hotel_id;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setHotel_id(ObjectId hotel_id) {
-        this.hotel_id = hotel_id;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
-    public ObjectId getErabiltzailea_id() {
-        return erabiltzailea_id;
+    public Erabiltzailea getErabiltzailea() {
+        return erabiltzailea;
     }
 
-    public void setErabiltzailea_id(ObjectId erabiltzailea_id) {
-        this.erabiltzailea_id = erabiltzailea_id;
+    public void setErabiltzailea(Erabiltzailea erabiltzailea) {
+        this.erabiltzailea = erabiltzailea;
     }
 
     public int getTxartel_zenbakia() {
@@ -101,30 +100,30 @@ public class Errenta{
         this.txartel_titularra = txartel_titularra;
     }
 
-    public Date getTxatel_iraunginpena() {
+    public String getTxartel_iraunginpena() {
         return txartel_iraunginpena;
     }
 
-    public void setTxatel_iraunginpena(Date txatel_iraunginpena) {
-        this.txartel_iraunginpena = txatel_iraunginpena;
+    public void setTxartel_iraunginpena(String txartel_iraunginpena) {
+        this.txartel_iraunginpena = txartel_iraunginpena;
     }
 
-    public int getTxater_cvv() {
+    public int getTxartel_cvv() {
         return txartel_cvv;
     }
 
-    public void setTxater_cvv(int txartel_cvv) {
+    public void setTxartel_cvv(int txartel_cvv) {
         this.txartel_cvv = txartel_cvv;
     }
 
     @Override
     public String toString() {
-        return "Errenta{" + "errenta_id=" + errenta_id + ", hasiera_data=" + hasiera_data + ", amaiera_data=" + amaiera_data + ", hotel_id=" + hotel_id + ", erabiltzailea_id=" + erabiltzailea_id + ", txartel_zenbakia=" + txartel_zenbakia + ", txartel_titularra=" + txartel_titularra + ", txatel_iraunginpena=" + txartel_iraunginpena + ", txater_cvv=" + txartel_cvv + '}';
+        return "Errenta{" + "errenta_id=" + errenta_id + ", hasiera_data=" + hasiera_data + ", amaiera_data=" + amaiera_data + ", hotel=" + hotel + ", erabiltzailea=" + erabiltzailea + ", txartel_zenbakia=" + txartel_zenbakia + ", txartel_titularra=" + txartel_titularra + ", txartel_iraunginpena=" + txartel_iraunginpena + ", txartel_cvv=" + txartel_cvv + '}';
     }
-
+    
     @Override
     public int hashCode() {
-        return Objects.hash(errenta_id, hasiera_data, amaiera_data, hotel_id, erabiltzailea_id, txartel_zenbakia, txartel_titularra, txartel_iraunginpena, txartel_cvv);
+        return Objects.hash(errenta_id, hasiera_data, amaiera_data, hotel, erabiltzailea, txartel_zenbakia, txartel_titularra, txartel_iraunginpena, txartel_cvv);
     }
 
     @Override
@@ -145,27 +144,28 @@ public class Errenta{
         if (this.txartel_cvv != other.txartel_cvv) {
             return false;
         }
-        if (!Objects.equals(this.txartel_titularra, other.txartel_titularra)) {
-            return false;
-        }
-        if (!Objects.equals(this.errenta_id, other.errenta_id)) {
-            return false;
-        }
         if (!Objects.equals(this.hasiera_data, other.hasiera_data)) {
             return false;
         }
         if (!Objects.equals(this.amaiera_data, other.amaiera_data)) {
             return false;
         }
-        if (!Objects.equals(this.hotel_id, other.hotel_id)) {
-            return false;
-        }
-        if (!Objects.equals(this.erabiltzailea_id, other.erabiltzailea_id)) {
+        if (!Objects.equals(this.txartel_titularra, other.txartel_titularra)) {
             return false;
         }
         if (!Objects.equals(this.txartel_iraunginpena, other.txartel_iraunginpena)) {
             return false;
         }
+        if (!Objects.equals(this.errenta_id, other.errenta_id)) {
+            return false;
+        }
+        if (!Objects.equals(this.hotel, other.hotel)) {
+            return false;
+        }
+        if (!Objects.equals(this.erabiltzailea, other.erabiltzailea)) {
+            return false;
+        }
         return true;
     }
+
 }

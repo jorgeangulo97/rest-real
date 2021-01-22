@@ -31,7 +31,7 @@ public class ErabiltzaileaController {
 
     @PostMapping("erabiltzaileak")
     @ResponseStatus(HttpStatus.CREATED)
-    public List<Erabiltzailea> postHotels(@RequestBody List<Erabiltzailea> erabiltzaileak) {
+    public List<Erabiltzailea> postErabiltzailea(@RequestBody List<Erabiltzailea> erabiltzaileak) {
         return erabiltzaileaRepository.saveAll(erabiltzaileak);
     }
 
