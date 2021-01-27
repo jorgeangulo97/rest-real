@@ -1,0 +1,135 @@
+﻿.tabcontent {
+    display: none;
+}
+
+    .tabcontent .active {
+        display: block;
+        display: show;
+    }
+
+.navbar {
+    transition: all 0.4s;
+    background-color: #3a4750;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+    .navbar .nav-link {
+        color: #fff;
+    }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .navbar .navbar-brand {
+        color: #fff;
+    }
+
+.navbar-brand img {
+    width: 120px;
+    height: 50px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: #555;
+        }
+}
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+body {
+    min-height: 110vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    .sticky + .content {
+        padding-top: 102px;
+    }
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #262626;
+    color: #627482 !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.containerHandia {
+    background-image: url('../Imagenes/About/fondoa.png');
+    padding: 40px;
+    width: 100%;
+    height: 850px;
+    margin: auto;
+}
+
+.infomazioa {
+    padding: 50px;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+    .infomazioa h2 {
+        font-weight: bold;
+    }
+
+    .infomazioa img {
+        width: 400px;
+        height: auto;
+    }
+
+span.b {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    font-weight: bold;
+}
+
+span.c {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+    font-size: 20px;
+}
+
+    span.c h1 {
+        font-weight: 600;
+    }
+
+.argazkiak {
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.ventas {
+    width: 100%;
+    height: auto;
+}

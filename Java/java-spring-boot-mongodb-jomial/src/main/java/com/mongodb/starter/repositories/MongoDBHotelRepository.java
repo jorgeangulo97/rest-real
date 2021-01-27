@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository
 public class MongoDBHotelRepository implements HotelRepository {
@@ -71,6 +72,11 @@ public class MongoDBHotelRepository implements HotelRepository {
         return hotelCollection.find(in("_id", mapToObjectIds(ids))).into(new ArrayList<>());
     }
 
+    @Override
+    public List<Hotel> findAllbyKokalekua(@RequestParam(value= "kokalekua") String kokalekuak) {
+        return hotelCollection.find(in("kokalekua", kokalekuak)).into(new ArrayList<>());
+    }
+    
     @Override
     public Hotel findOne(String id) {
         return hotelCollection.find(eq("_id", new ObjectId(id))).first();

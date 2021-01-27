@@ -1,4 +1,4 @@
-mongoimport --host=localhost:27017 --db=jomial --collection=hotel --file=hotel2.json
+mongoimport --host=localhost:27017 --db=jomial --collection=hotel --file=hotel.json
 
 Jomial
 	Hotel:
@@ -11,11 +11,11 @@ Jomial
 		-String helbidea 
 		-int izarrak 
 		-double kalifikazioa 
-		-double kostuGaua 
-		-List<String> argazkiak 
+		-List<Argazkia> argazkiak 
 		-String info 
 		-String infoGenerala 
-		-List<String> zerbitzuak (Spa y centro de bienestar,Habitaciones para no fumadores,WiFi en todo el alojamiento...)
+		-List<Gela>gelak	
+		-List<String> zerbitzuak 
 	
 	Erabiltzailea:
 		-ObjectId erabiltzailea_id
@@ -29,8 +29,8 @@ Jomial
 		-ObjectId errenta_id
 		-String hasiera_data
 		-String amaiera_data
-		-Hotel hotel (Meter el objeto entero de Hotel)
-		-Erabiltzailea erabiltzailea (Meter el objeto entero de Erabiltzailea)
+		-Hotel hotel 
+		-Erabiltzailea erabiltzailea 
 		-int txartel_zenbakia
 		-String txartel_titularra
 		-data txartel_iraunginpena

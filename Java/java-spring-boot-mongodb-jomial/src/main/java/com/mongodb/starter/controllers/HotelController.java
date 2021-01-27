@@ -53,6 +53,11 @@ public class HotelController {
         List<String> listIds = asList(ids.split(","));
         return hotelRepository.findAll(listIds);
     }
+    
+    @GetMapping("hotels/kokalekua")
+    public List<Hotel> getHotelsKokalekua(@RequestParam(value= "kokalekua") String kokalekua) {
+        return hotelRepository.findAllbyKokalekua(kokalekua);
+    }
 
     @GetMapping("hotels/count")
     public Long getCount() {

@@ -16,6 +16,8 @@ public interface HotelRepository {
 
     List<Hotel> findAll(List<String> ids);
 
+    List<Hotel> findAllbyKokalekua(String kokalekua);
+    
     Hotel findOne(String id);
 
     long count();

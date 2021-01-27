@@ -1,0 +1,118 @@
+﻿<link rel="stylesheet" href="~/Content/styles.css">
+<title>Encuentra tu hotel</title>
+@model IEnumerable<Jomial_Final.Models.Hotel>
+
+<header id="myHeader">
+    <nav class="navbar1 navbar bg justify-content-between">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Imagenes/logo.png"></a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <div class="containerHandia">
+        <h5>Más de 300 alojamientos</h5>
+        <h2>Encuentra lugares para hospedarte cerca de ti</h2>
+        <h6>Antes de reservar, revisa las restricciones de viaje relacionadas con el coronavirus.Más información</h6><br>
+        <div class="containerTxikia">
+            <h4><strong>@ViewData["hotelIzena"]</strong></h4><span class="infogeneral"><strong>Fecha de entrada: </strong> @ViewData["dataIn"] · <strong>Fecha de salida: </strong> @ViewData["dataOut"] · <strong>Huespedes: </strong> @ViewData["huespe"]</span><br><br>
+            @foreach (var item in Model)
+            {
+        <div class="info">
+            @{
+                var fuente = item.argazkiak.First().argazkia + ".png";
+
+            }
+            @{
+                var total = item.gelak.First().kostuGaua * 3;
+
+            }
+            <img src="~/Imagenes/FotosHotel/@fuente" /><br>
+            <p style="padding-top: 10px;"><img style="width: 20px;height: 20px;display: inline; vertical-align: text-top;" src="~/Imagenes/iconfinder_star_326703 (1).png"><strong style="padding-top: 12px;">@Html.DisplayFor(modelItem => item.izarrak)</strong>(326)</p>
+            <h4>@Html.DisplayFor(modelItem => item.izena)</h4>
+            <h3>@Html.DisplayFor(modelItem => item.infoGenerala)</h3>
+
+            <h4><strong>@Html.DisplayFor(modelItem => item.gelak.First().kostuGaua)€</strong> - por noche.</h4>
+            <h6><strong>Total: </strong>@total€</h6>
+        </div>
+            }
+
+        </div>
+
+    </div>
+</section>
+<br>
+<section id="mysection">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>Valladolid<br /><img src="~/Imagenes/valladolid.jpg" /></td>
+            <td>León<br /><img src="~/Imagenes/leon.jpg" /></td>
+            <td>Segovia<br /><img src="~/Imagenes/segovia.jpg" /></td>
+            <td>Cáceres<br /><img src="~/Imagenes/caceres.jpg" /></td>
+        </tr>
+        <tr>
+
+            <td>Ávila<br /><img src="~/Imagenes/avila.jpg" /></td>
+            <td>Guadalajara<br /><img src="~/Imagenes/guadalajara.jpg" /></td>
+            <td>Cuenca<br /><img src="~/Imagenes/cuenca.jpg" /></td>
+            <td>Alcalá de Henares<br /><img src="~/Imagenes/alcala.jpg" /></td>
+        </tr>
+    </table>
+</section>
+<br>
+
+<div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <ul class="list-unstyled">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Direccion</b></h6>
+                        <p class="mb-1">6,Legaño Kalea</p>
+                        <p>Berriz,Vizcaya</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Jomial All Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>Contacto</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>jomial@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>Contacto Importante</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> jomial@uni.eus</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript">
+    window.onscroll = function () { myFunction() };
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>

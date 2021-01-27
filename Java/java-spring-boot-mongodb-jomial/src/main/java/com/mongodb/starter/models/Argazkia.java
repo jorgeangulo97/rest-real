@@ -37,7 +37,7 @@ public class Argazkia {
 
     @Override
     public int hashCode() {
-         return Objects.hash(argazkia);
+        return Objects.hash(argazkia);
     }
 
     @Override

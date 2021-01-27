@@ -27,17 +27,17 @@ public class Hotel {
     private String helbidea;
     private int izarrak;
     private double kalifikazioa;
-    private double kostuGaua;
     private List<Argazkia> argazkiak;
     private String info;
     private String infoGenerala;
-    private List<Zerbitzua> zerbitzuak;
+    private List<Gela> gelak;
+    private List<String> zerbitzuak;
 
     public Hotel() {
         
     }
 
-    public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, double kostuGaua, List<Argazkia> argazkiak, String info, String infoGenerala, List<Zerbitzua> zerbitzuak) {
+    public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, List<Argazkia> argazkiak, String info, String infoGenerala, List<Gela> gelak, List<String> zerbitzuak) {
         this.hotel_id = hotel_id;
         this.izena = izena;
         this.postaKodea = postaKodea;
@@ -47,10 +47,10 @@ public class Hotel {
         this.helbidea = helbidea;
         this.izarrak = izarrak;
         this.kalifikazioa = kalifikazioa;
-        this.kostuGaua = kostuGaua;
         this.argazkiak = argazkiak;
         this.info = info;
         this.infoGenerala = infoGenerala;
+        this.gelak = gelak;
         this.zerbitzuak = zerbitzuak;
     }
 
@@ -126,14 +126,6 @@ public class Hotel {
         this.kalifikazioa = kalifikazioa;
     }
 
-    public double getKostuGaua() {
-        return kostuGaua;
-    }
-
-    public void setKostuGaua(double kostuGaua) {
-        this.kostuGaua = kostuGaua;
-    }
-
     public List<Argazkia> getArgazkiak() {
         return argazkiak;
     }
@@ -158,22 +150,30 @@ public class Hotel {
         this.infoGenerala = infoGenerala;
     }
 
-    public List<Zerbitzua> getZerbitzuak() {
+    public List<Gela> getGelak() {
+        return gelak;
+    }
+
+    public void setGelak(List<Gela> gelak) {
+        this.gelak = gelak;
+    }
+
+    public List<String> getZerbitzuak() {
         return zerbitzuak;
     }
 
-    public void setZerbitzuak(List<Zerbitzua> zerbitzuak) {
+    public void setZerbitzuak(List<String> zerbitzuak) {
         this.zerbitzuak = zerbitzuak;
     }
 
     @Override
     public String toString() {
-        return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", kostuGaua=" + kostuGaua + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", zerbitzuak=" + zerbitzuak + '}';
+        return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", gelak=" + gelak + ", zerbitzuak=" + zerbitzuak + '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hotel_id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, kostuGaua, argazkiak, info, infoGenerala, zerbitzuak);
+        return Objects.hash(hotel_id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, argazkiak, info, infoGenerala, gelak, zerbitzuak);
     }
 
     @Override
@@ -195,9 +195,6 @@ public class Hotel {
             return false;
         }
         if (Double.doubleToLongBits(this.kalifikazioa) != Double.doubleToLongBits(other.kalifikazioa)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.kostuGaua) != Double.doubleToLongBits(other.kostuGaua)) {
             return false;
         }
         if (!Objects.equals(this.izena, other.izena)) {
@@ -227,9 +224,13 @@ public class Hotel {
         if (!Objects.equals(this.argazkiak, other.argazkiak)) {
             return false;
         }
+        if (!Objects.equals(this.gelak, other.gelak)) {
+            return false;
+        }
         if (!Objects.equals(this.zerbitzuak, other.zerbitzuak)) {
             return false;
         }
         return true;
     }
+
 }
