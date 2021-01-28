@@ -27,6 +27,10 @@ import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ *
+ * @author angulo.jorge
+ */
 @Repository
 public class MongoDBHotelRepository implements HotelRepository {
 
@@ -44,6 +48,11 @@ public class MongoDBHotelRepository implements HotelRepository {
         hotelCollection = client.getDatabase("jomial").getCollection("hotel", Hotel.class);
     }
 
+    /**
+     *
+     * @param hotel
+     * @return
+     */
     @Override
     public Hotel save(Hotel hotel) {
         hotel.setHotel_id(new ObjectId());
@@ -51,6 +60,11 @@ public class MongoDBHotelRepository implements HotelRepository {
         return hotel;
     }
 
+    /**
+     *
+     * @param hotel
+     * @return
+     */
     @Override
     public List<Hotel> saveAll(List<Hotel> hotel) {
         try (ClientSession clientSession = client.startSession()) {
@@ -62,36 +76,69 @@ public class MongoDBHotelRepository implements HotelRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Hotel> findAll() {
         return hotelCollection.find().into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public List<Hotel> findAll(List<String> ids) {
         return hotelCollection.find(in("_id", mapToObjectIds(ids))).into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param kokalekuak
+     * @return
+     */
     @Override
     public List<Hotel> findAllbyKokalekua(@RequestParam(value= "kokalekua") String kokalekuak) {
         return hotelCollection.find(in("kokalekua", kokalekuak)).into(new ArrayList<>());
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Hotel findOne(String id) {
         return hotelCollection.find(eq("_id", new ObjectId(id))).first();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long count() {
         return hotelCollection.countDocuments();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public long delete(String id) {
         return hotelCollection.deleteOne(eq("_id", new ObjectId(id))).getDeletedCount();
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public long delete(List<String> ids) {
         try (ClientSession clientSession = client.startSession()) {
@@ -100,6 +147,10 @@ public class MongoDBHotelRepository implements HotelRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long deleteAll() {
         try (ClientSession clientSession = client.startSession()) {
@@ -107,12 +158,22 @@ public class MongoDBHotelRepository implements HotelRepository {
         }
     }
 
+    /**
+     *
+     * @param hotel
+     * @return
+     */
     @Override
     public Hotel update(Hotel hotel) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
         return hotelCollection.findOneAndReplace(eq("_id", hotel.getHotel_id()), hotel, options);
     }
 
+    /**
+     *
+     * @param hotels
+     * @return
+     */
     @Override
     public long update(List<Hotel> hotels) {
         List<WriteModel<Hotel>> writes = hotels.stream()

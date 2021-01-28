@@ -17,49 +17,95 @@ public class Gela {
     private String tamaina;
     private double kostuGaua;
 
+    /**
+     *
+     */
     public Gela() {
     }
 
+    /**
+     *
+     * @param gela
+     * @param tamaina
+     * @param kostuGaua
+     */
     public Gela(int gela, String tamaina, double kostuGaua) {
         this.gela = gela;
         this.tamaina = tamaina;
         this.kostuGaua = kostuGaua;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getGela() {
         return gela;
     }
 
+    /**
+     *
+     * @param gela
+     */
     public void setGela(int gela) {
         this.gela = gela;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTamaina() {
         return tamaina;
     }
 
+    /**
+     *
+     * @param tamaina
+     */
     public void setTamaina(String tamaina) {
         this.tamaina = tamaina;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getKostuGaua() {
         return kostuGaua;
     }
 
+    /**
+     *
+     * @param kostuGaua
+     */
     public void setKostuGaua(double kostuGaua) {
         this.kostuGaua = kostuGaua;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Gela{" + "gela=" + gela + ", tamaina=" + tamaina + ", kostuGaua=" + kostuGaua + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(gela, tamaina, kostuGaua);
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

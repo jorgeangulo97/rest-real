@@ -26,9 +26,21 @@ public class Erabiltzailea{
     private String erabiltzailea;
     private String pasahitza;
 
+    /**
+     *
+     */
     public Erabiltzailea() {
     }
 
+    /**
+     *
+     * @param erabiltzailea_id
+     * @param izena
+     * @param abizena
+     * @param emaila
+     * @param erabiltzailea
+     * @param pasahitza
+     */
     public Erabiltzailea(ObjectId erabiltzailea_id, String izena, String abizena, String emaila, String erabiltzailea, String pasahitza) {
         this.erabiltzailea_id = erabiltzailea_id;
         this.izena = izena;
@@ -38,64 +50,125 @@ public class Erabiltzailea{
         this.pasahitza = pasahitza;
     }
 
+    /**
+     *
+     * @return
+     */
     public ObjectId getErabiltzailea_id() {
         return erabiltzailea_id;
     }
 
+    /**
+     *
+     * @param erabiltzailea_id
+     */
     public void setErabiltzailea_id(ObjectId erabiltzailea_id) {
         this.erabiltzailea_id = erabiltzailea_id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIzena() {
         return izena;
     }
 
+    /**
+     *
+     * @param izena
+     */
     public void setIzena(String izena) {
         this.izena = izena;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAbizena() {
         return abizena;
     }
 
+    /**
+     *
+     * @param abizena
+     */
     public void setAbizena(String abizena) {
         this.abizena = abizena;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmaila() {
         return emaila;
     }
 
+    /**
+     *
+     * @param emaila
+     */
     public void setEmaila(String emaila) {
         this.emaila = emaila;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getErabiltzailea() {
         return erabiltzailea;
     }
 
+    /**
+     *
+     * @param erabiltzailea
+     */
     public void setErabiltzailea(String erabiltzailea) {
         this.erabiltzailea = erabiltzailea;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPasahitza() {
         return pasahitza;
     }
 
+    /**
+     *
+     * @param pasahitza
+     */
     public void setPasahitza(String pasahitza) {
         this.pasahitza = pasahitza;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Erabiltzailea{" + "erabiltzailea_id=" + erabiltzailea_id + ", izena=" + izena + ", abizena=" + abizena + ", emaila=" + emaila + ", erabiltzailea=" + erabiltzailea + ", pasahitza=" + pasahitza + '}';
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(erabiltzailea_id, izena, abizena, emaila, erabiltzailea, pasahitza);
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

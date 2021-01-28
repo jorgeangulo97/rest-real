@@ -14,32 +14,60 @@ import java.util.Objects;
 public class Argazkia {
     private String argazkia;
 
+    /**
+     *
+     */
     public Argazkia() {
         
     }
 
+    /**
+     *
+     * @param argazkia
+     */
     public Argazkia(String argazkia) {
         this.argazkia = argazkia;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getArgazkia() {
         return argazkia;
     }
 
+    /**
+     *
+     * @param argazkia
+     */
     public void setArgazkia(String argazkia) {
         this.argazkia = argazkia;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Argazkia{" + "argazkia=" + argazkia + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(argazkia);
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

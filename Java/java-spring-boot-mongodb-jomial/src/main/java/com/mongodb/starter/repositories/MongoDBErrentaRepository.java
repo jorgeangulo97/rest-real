@@ -26,6 +26,10 @@ import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
 
+/**
+ *
+ * @author angulo.jorge
+ */
 @Repository
 public class MongoDBErrentaRepository implements ErrentaRepository {
 
@@ -43,6 +47,11 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
         errentaCollection = client.getDatabase("jomial").getCollection("errenta", Errenta.class);
     }
 
+    /**
+     *
+     * @param errenta
+     * @return
+     */
     @Override
     public Errenta save(Errenta errenta) {
         errenta.setErrenta_id(new ObjectId());
@@ -50,6 +59,11 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
         return errenta;
     }
 
+    /**
+     *
+     * @param errenta
+     * @return
+     */
     @Override
     public List<Errenta> saveAll(List<Errenta> errenta) {
         try (ClientSession clientSession = client.startSession()) {
@@ -61,31 +75,59 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Errenta> findAll() {
         return errentaCollection.find().into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public List<Errenta> findAll(List<String> ids) {
         return errentaCollection.find(in("_id", mapToObjectIds(ids))).into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Errenta findOne(String id) {
         return errentaCollection.find(eq("_id", new ObjectId(id))).first();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long count() {
         return errentaCollection.countDocuments();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public long delete(String id) {
         return errentaCollection.deleteOne(eq("_id", new ObjectId(id))).getDeletedCount();
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public long delete(List<String> ids) {
         try (ClientSession clientSession = client.startSession()) {
@@ -94,6 +136,10 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long deleteAll() {
         try (ClientSession clientSession = client.startSession()) {
@@ -101,12 +147,22 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
         }
     }
 
+    /**
+     *
+     * @param errenta
+     * @return
+     */
     @Override
     public Errenta update(Errenta errenta) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
         return errentaCollection.findOneAndReplace(eq("_id", errenta.getErrenta_id()), errenta, options);
     }
 
+    /**
+     *
+     * @param errentak
+     * @return
+     */
     @Override
     public long update(List<Errenta> errentak) {
         List<WriteModel<Errenta>> writes = errentak.stream()

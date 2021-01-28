@@ -14,6 +14,10 @@ import org.bson.types.ObjectId;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ *
+ * @author angulo.jorge
+ */
 @JsonInclude(Include.NON_NULL)
 public class Hotel {
 
@@ -33,10 +37,30 @@ public class Hotel {
     private List<Gela> gelak;
     private List<String> zerbitzuak;
 
+    /**
+     *
+     */
     public Hotel() {
         
     }
 
+    /**
+     *
+     * @param hotel_id
+     * @param izena
+     * @param postaKodea
+     * @param distantzia
+     * @param kokalekua
+     * @param herrialdea
+     * @param helbidea
+     * @param izarrak
+     * @param kalifikazioa
+     * @param argazkiak
+     * @param info
+     * @param infoGenerala
+     * @param gelak
+     * @param zerbitzuak
+     */
     public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, List<Argazkia> argazkiak, String info, String infoGenerala, List<Gela> gelak, List<String> zerbitzuak) {
         this.hotel_id = hotel_id;
         this.izena = izena;
@@ -54,128 +78,253 @@ public class Hotel {
         this.zerbitzuak = zerbitzuak;
     }
 
+    /**
+     *
+     * @return
+     */
     public ObjectId getHotel_id() {
         return hotel_id;
     }
 
+    /**
+     *
+     * @param hotel_id
+     */
     public void setHotel_id(ObjectId hotel_id) {
         this.hotel_id = hotel_id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIzena() {
         return izena;
     }
 
+    /**
+     *
+     * @param izena
+     */
     public void setIzena(String izena) {
         this.izena = izena;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPostaKodea() {
         return postaKodea;
     }
 
+    /**
+     *
+     * @param postaKodea
+     */
     public void setPostaKodea(int postaKodea) {
         this.postaKodea = postaKodea;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDistantzia() {
         return distantzia;
     }
 
+    /**
+     *
+     * @param distantzia
+     */
     public void setDistantzia(String distantzia) {
         this.distantzia = distantzia;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getKokalekua() {
         return kokalekua;
     }
 
+    /**
+     *
+     * @param kokalekua
+     */
     public void setKokalekua(String kokalekua) {
         this.kokalekua = kokalekua;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getHerrialdea() {
         return herrialdea;
     }
 
+    /**
+     *
+     * @param herrialdea
+     */
     public void setHerrialdea(String herrialdea) {
         this.herrialdea = herrialdea;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getHelbidea() {
         return helbidea;
     }
 
+    /**
+     *
+     * @param helbidea
+     */
     public void setHelbidea(String helbidea) {
         this.helbidea = helbidea;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIzarrak() {
         return izarrak;
     }
 
+    /**
+     *
+     * @param izarrak
+     */
     public void setIzarrak(int izarrak) {
         this.izarrak = izarrak;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getKalifikazioa() {
         return kalifikazioa;
     }
 
+    /**
+     *
+     * @param kalifikazioa
+     */
     public void setKalifikazioa(double kalifikazioa) {
         this.kalifikazioa = kalifikazioa;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Argazkia> getArgazkiak() {
         return argazkiak;
     }
 
+    /**
+     *
+     * @param argazkiak
+     */
     public void setArgazkiak(List<Argazkia> argazkiak) {
         this.argazkiak = argazkiak;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInfo() {
         return info;
     }
 
+    /**
+     *
+     * @param info
+     */
     public void setInfo(String info) {
         this.info = info;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInfoGenerala() {
         return infoGenerala;
     }
 
+    /**
+     *
+     * @param infoGenerala
+     */
     public void setInfoGenerala(String infoGenerala) {
         this.infoGenerala = infoGenerala;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Gela> getGelak() {
         return gelak;
     }
 
+    /**
+     *
+     * @param gelak
+     */
     public void setGelak(List<Gela> gelak) {
         this.gelak = gelak;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getZerbitzuak() {
         return zerbitzuak;
     }
 
+    /**
+     *
+     * @param zerbitzuak
+     */
     public void setZerbitzuak(List<String> zerbitzuak) {
         this.zerbitzuak = zerbitzuak;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", gelak=" + gelak + ", zerbitzuak=" + zerbitzuak + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(hotel_id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, argazkiak, info, infoGenerala, gelak, zerbitzuak);
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

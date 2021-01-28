@@ -26,6 +26,10 @@ import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
 
+/**
+ *
+ * @author angulo.jorge
+ */
 @Repository
 public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
@@ -43,6 +47,11 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         erabiltzaileaCollection = client.getDatabase("jomial").getCollection("erabiltzailea", Erabiltzailea.class);
     }
 
+    /**
+     *
+     * @param erabiltzailea
+     * @return
+     */
     @Override
     public Erabiltzailea save(Erabiltzailea erabiltzailea) {
         erabiltzailea.setErabiltzailea_id(new ObjectId());
@@ -50,6 +59,11 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         return erabiltzailea;
     }
 
+    /**
+     *
+     * @param erabiltzailea
+     * @return
+     */
     @Override
     public List<Erabiltzailea> saveAll(List<Erabiltzailea> erabiltzailea) {
         try (ClientSession clientSession = client.startSession()) {
@@ -61,31 +75,59 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Erabiltzailea> findAll() {
         return erabiltzaileaCollection.find().into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public List<Erabiltzailea> findAll(List<String> ids) {
         return erabiltzaileaCollection.find(in("_id", mapToObjectIds(ids))).into(new ArrayList<>());
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Erabiltzailea findOne(String id) {
         return erabiltzaileaCollection.find(eq("_id", new ObjectId(id))).first();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long count() {
         return erabiltzaileaCollection.countDocuments();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public long delete(String id) {
         return erabiltzaileaCollection.deleteOne(eq("_id", new ObjectId(id))).getDeletedCount();
     }
 
+    /**
+     *
+     * @param ids
+     * @return
+     */
     @Override
     public long delete(List<String> ids) {
         try (ClientSession clientSession = client.startSession()) {
@@ -94,6 +136,10 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long deleteAll() {
         try (ClientSession clientSession = client.startSession()) {
@@ -101,12 +147,22 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         }
     }
 
+    /**
+     *
+     * @param erabiltzailea
+     * @return
+     */
     @Override
     public Erabiltzailea update(Erabiltzailea erabiltzailea) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
         return erabiltzaileaCollection.findOneAndReplace(eq("_id", erabiltzailea.getErabiltzailea_id()), erabiltzailea, options);
     }
 
+    /**
+     *
+     * @param erabiltzaileak
+     * @return
+     */
     @Override
     public long update(List<Erabiltzailea> erabiltzaileak) {
         List<WriteModel<Erabiltzailea>> writes = erabiltzaileak.stream()
