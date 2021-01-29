@@ -49,8 +49,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param erabiltzailea
-     * @return
+     * @param erabiltzailea Erabiltzailea klasearen instantzia
+     * @return gordetzen den erabiltzailea 
      */
     @Override
     public Erabiltzailea save(Erabiltzailea erabiltzailea) {
@@ -61,8 +61,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param erabiltzailea
-     * @return
+     * @param erabiltzailea Erabiltzailea klasearen instantziaren lista 
+     * @return gordetzen diren erabiltzaileak
      */
     @Override
     public List<Erabiltzailea> saveAll(List<Erabiltzailea> erabiltzailea) {
@@ -77,7 +77,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @return
+     * @return erabiltzaile guztiak bilatu
      */
     @Override
     public List<Erabiltzailea> findAll() {
@@ -86,8 +86,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids erabiltzaileen id-en String lista bat
+     * @return sartutako id-en erabiltzaileak bilatu
      */
     @Override
     public List<Erabiltzailea> findAll(List<String> ids) {
@@ -96,8 +96,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id erabiltzailearen id-a
+     * @return sartutako id-aren erabiltzailea bilatu
      */
     @Override
     public Erabiltzailea findOne(String id) {
@@ -106,7 +106,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @return
+     * @return zenbat erabiltzaile daude (zenbakizko balioa)
      */
     @Override
     public long count() {
@@ -115,8 +115,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id erabiltzaile baten id-a
+     * @return sartutako id-aren erabiltzailea ezabatu
      */
     @Override
     public long delete(String id) {
@@ -125,8 +125,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids erabiltzaileen id-en String lista bat
+     * @return sartutako id-en erabiltzaileak ezabatu
      */
     @Override
     public long delete(List<String> ids) {
@@ -138,7 +138,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @return
+     * @return erabiltzaile guztiak ezabatu
      */
     @Override
     public long deleteAll() {
@@ -149,8 +149,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param erabiltzailea
-     * @return
+     * @param erabiltzailea Erabiltzailea klasearen instantzia
+     * @return sartutako erabiltzailea eguneratu
      */
     @Override
     public Erabiltzailea update(Erabiltzailea erabiltzailea) {
@@ -160,8 +160,8 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
 
     /**
      *
-     * @param erabiltzaileak
-     * @return
+     * @param erabiltzaileak Erabiltzailea klasearen instantzien lista
+     * @return 
      */
     @Override
     public long update(List<Erabiltzailea> erabiltzaileak) {

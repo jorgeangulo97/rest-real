@@ -27,19 +27,19 @@ public class Erabiltzailea{
     private String pasahitza;
 
     /**
-     *
+     *Erabiltzailea klasearen konstruktorea
      */
     public Erabiltzailea() {
     }
 
     /**
      *
-     * @param erabiltzailea_id
-     * @param izena
-     * @param abizena
-     * @param emaila
-     * @param erabiltzailea
-     * @param pasahitza
+     * @param erabiltzailea_id erabiltzailearen id-a
+     * @param izena erabiltzailearen izena
+     * @param abizena erabiltzailearen abizena
+     * @param emaila erabiltzailearen emaila
+     * @param erabiltzailea erabiltzailearen erabiltzailea
+     * @param pasahitza erabiltzailearen pasahitza
      */
     public Erabiltzailea(ObjectId erabiltzailea_id, String izena, String abizena, String emaila, String erabiltzailea, String pasahitza) {
         this.erabiltzailea_id = erabiltzailea_id;
@@ -52,7 +52,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen id
      */
     public ObjectId getErabiltzailea_id() {
         return erabiltzailea_id;
@@ -60,7 +60,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param erabiltzailea_id
+     * @param erabiltzailea_id erabiltzailearen id
      */
     public void setErabiltzailea_id(ObjectId erabiltzailea_id) {
         this.erabiltzailea_id = erabiltzailea_id;
@@ -68,7 +68,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen izena
      */
     public String getIzena() {
         return izena;
@@ -76,7 +76,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param izena
+     * @param izena erabiltzailearen izena
      */
     public void setIzena(String izena) {
         this.izena = izena;
@@ -84,7 +84,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen abizena
      */
     public String getAbizena() {
         return abizena;
@@ -92,7 +92,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param abizena
+     * @param abizena erabiltzailearen abizena
      */
     public void setAbizena(String abizena) {
         this.abizena = abizena;
@@ -100,7 +100,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen emaila
      */
     public String getEmaila() {
         return emaila;
@@ -108,7 +108,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param emaila
+     * @param emaila erabiltzailearen emaila
      */
     public void setEmaila(String emaila) {
         this.emaila = emaila;
@@ -116,7 +116,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen erabiltzailea
      */
     public String getErabiltzailea() {
         return erabiltzailea;
@@ -124,7 +124,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param erabiltzailea
+     * @param erabiltzailea erabiltzailearen erabiltzailea
      */
     public void setErabiltzailea(String erabiltzailea) {
         this.erabiltzailea = erabiltzailea;
@@ -132,7 +132,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @return
+     * @return erabiltzailearen pasahitza
      */
     public String getPasahitza() {
         return pasahitza;
@@ -140,7 +140,7 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param pasahitza
+     * @param pasahitza erabiltzailearen pasahitza
      */
     public void setPasahitza(String pasahitza) {
         this.pasahitza = pasahitza;

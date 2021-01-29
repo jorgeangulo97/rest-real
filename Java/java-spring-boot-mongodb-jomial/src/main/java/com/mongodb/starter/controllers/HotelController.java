@@ -33,8 +33,8 @@ public class HotelController {
 
     /**
      *
-     * @param hotel
-     * @return
+     * @param hotel Hotel klasearen instantzia da
+     * @return sartutako hotela gorde
      */
     @PostMapping("hotel")
     @ResponseStatus(HttpStatus.CREATED)
@@ -44,8 +44,8 @@ public class HotelController {
 
     /**
      *
-     * @param hotels
-     * @return
+     * @param hotels Hotel klasearen hainbat instantzia dira
+     * @return hotel bat baino gehiago gorde
      */
     @PostMapping("hotels")
     @ResponseStatus(HttpStatus.CREATED)
@@ -55,7 +55,7 @@ public class HotelController {
 
     /**
      *
-     * @return
+     * @return hotel guztiak bilatu
      */
     @GetMapping("hotels")
     public List<Hotel> getHotels() {
@@ -64,8 +64,8 @@ public class HotelController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id hotel instantziaren id-a
+     * @return sartutako id-a duen lehengo hotela bilatu
      */
     @GetMapping("hotel/{id}")
     public ResponseEntity<Hotel> getHotel(@PathVariable String id) {
@@ -77,8 +77,8 @@ public class HotelController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat hotelen id-ak
+     * @return sartutako id-en hotelak bilatu
      */
     @GetMapping("hotels/{ids}")
     public List<Hotel> getHotels(@PathVariable String ids) {
@@ -88,8 +88,8 @@ public class HotelController {
     
     /**
      *
-     * @param kokalekua
-     * @return
+     * @param kokalekua Hotel instantziaren kokalekua
+     * @return sartutako kokalekuko hotel guztiak bilatu
      */
     @GetMapping("hotels/kokalekua")
     public List<Hotel> getHotelsKokalekua(@RequestParam(value= "kokalekua") String kokalekua) {
@@ -98,7 +98,7 @@ public class HotelController {
 
     /**
      *
-     * @return
+     * @return zenbat hotel daude (zenbakizko balioa)
      */
     @GetMapping("hotels/count")
     public Long getCount() {
@@ -107,8 +107,8 @@ public class HotelController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id hotel baten id-a
+     * @return hotel id-aren errenta ezabatu
      */
     @DeleteMapping("hotel/{id}")
     public Long deleteHotel(@PathVariable String id) {
@@ -117,8 +117,8 @@ public class HotelController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat hotelen id-ak
+     * @return sartutako id-en hotelak borratu
      */
     @DeleteMapping("hotels/{ids}")
     public Long deleteHotels(@PathVariable String ids) {
@@ -128,7 +128,7 @@ public class HotelController {
 
     /**
      *
-     * @return
+     * @return hotel guztiak borratu
      */
     @DeleteMapping("hotels")
     public Long deleteHotels() {
@@ -137,8 +137,8 @@ public class HotelController {
 
     /**
      *
-     * @param hotel
-     * @return
+     * @param hotel Hotel klasearen instantzia bat 
+     * @return sartutako hotela eguneratu
      */
     @PutMapping("hotel")
     public Hotel putHotel(@RequestBody Hotel hotel) {
@@ -147,8 +147,8 @@ public class HotelController {
 
     /**
      *
-     * @param hotels
-     * @return
+     * @param hotels Hotel klasearen hainbat instantzia
+     * @return sartutako errentak eguneratu
      */
     @PutMapping("hotels")
     public Long putHotel(@RequestBody List<Hotel> hotels) {

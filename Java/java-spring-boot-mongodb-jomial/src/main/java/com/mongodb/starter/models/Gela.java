@@ -18,16 +18,16 @@ public class Gela {
     private double kostuGaua;
 
     /**
-     *
+     *Gela klasearen konstruktorea
      */
     public Gela() {
     }
 
     /**
      *
-     * @param gela
-     * @param tamaina
-     * @param kostuGaua
+     * @param gela gelaren zenbakia
+     * @param tamaina gelaren tamainaren informazioa
+     * @param kostuGaua gelaren gau bateko kostua
      */
     public Gela(int gela, String tamaina, double kostuGaua) {
         this.gela = gela;
@@ -37,7 +37,7 @@ public class Gela {
 
     /**
      *
-     * @return
+     * @return gelaren zenbakia
      */
     public int getGela() {
         return gela;
@@ -45,7 +45,7 @@ public class Gela {
 
     /**
      *
-     * @param gela
+     * @param gela gelaren zenbakia
      */
     public void setGela(int gela) {
         this.gela = gela;
@@ -53,7 +53,7 @@ public class Gela {
 
     /**
      *
-     * @return
+     * @return gelaren tamainaren informazioa
      */
     public String getTamaina() {
         return tamaina;
@@ -61,7 +61,7 @@ public class Gela {
 
     /**
      *
-     * @param tamaina
+     * @param tamaina gelaren tamainaren informazioa
      */
     public void setTamaina(String tamaina) {
         this.tamaina = tamaina;
@@ -69,7 +69,7 @@ public class Gela {
 
     /**
      *
-     * @return
+     * @return gelaren gau bateko kostua
      */
     public double getKostuGaua() {
         return kostuGaua;
@@ -77,7 +77,7 @@ public class Gela {
 
     /**
      *
-     * @param kostuGaua
+     * @param kostuGaua gelaren gau bateko kostua
      */
     public void setKostuGaua(double kostuGaua) {
         this.kostuGaua = kostuGaua;
