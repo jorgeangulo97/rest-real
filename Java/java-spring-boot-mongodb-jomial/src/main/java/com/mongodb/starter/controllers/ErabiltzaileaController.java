@@ -33,8 +33,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param erabiltzailea
-     * @return
+     * @param erabiltzailea Erabiltzailea klasearen instantzia
+     * @return sartutako erabiltzailea gorde
      */
     @PostMapping("erabiltzailea")
     @ResponseStatus(HttpStatus.CREATED)
@@ -44,8 +44,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param erabiltzaileak
-     * @return
+     * @param erabiltzaileak Erabiltzailea klasearen hainbat instantzia
+     * @return sartutako erabiltzaileak gorde
      */
     @PostMapping("erabiltzaileak")
     @ResponseStatus(HttpStatus.CREATED)
@@ -55,7 +55,7 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @return
+     * @return rabiltzaile guztiak bilatu
      */
     @GetMapping("erabiltzaileak")
     public List<Erabiltzailea> getErabiltzaileak() {
@@ -64,8 +64,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id Erabiltzailea instantziaren id-a
+     * @return sartutako id-a duen lehengo erabiltzailea bilatu
      */
     @GetMapping("erabiltzailea/{id}")
     public ResponseEntity<Erabiltzailea> getErabiltzailea(@PathVariable String id) {
@@ -77,8 +77,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat erabiltzaileen id-ak
+     * @return sartutako id-en erabiltzaileak bilatu
      */
     @GetMapping("erabiltzaileak/{ids}")
     public List<Erabiltzailea> getErabiltzaileak(@PathVariable String ids) {
@@ -88,7 +88,7 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @return
+     * @return zenbat erabiltzaile daude (zenbakizko balioa)
      */
     @GetMapping("erabiltzaileak/count")
     public Long getCount() {
@@ -97,8 +97,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id erabiltzaile baten id-a
+     * @return sartutako id-aren erabiltzailea ezabatu
      */
     @DeleteMapping("erabiltzailea/{id}")
     public Long deleteErabiltzailea(@PathVariable String id) {
@@ -107,8 +107,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat erabiltzaileen id-ak
+     * @return sartutako id-en erabiltzaileak borratu
      */
     @DeleteMapping("erabiltzaileak/{ids}")
     public Long deleteErabiltzaileak(@PathVariable String ids) {
@@ -118,7 +118,7 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @return
+     * @return erabiltzaile guztiak borratu
      */
     @DeleteMapping("erabiltzaileak")
     public Long deleteErabiltzaileak() {
@@ -127,8 +127,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param erabiltzailea
-     * @return
+     * @param erabiltzailea Erabiltzailea klasearen instantzia bat
+     * @return sartutako erabiltzailea eguneratu
      */
     @PutMapping("erabiltzailea")
     public Erabiltzailea putErabiltzailea(@RequestBody Erabiltzailea erabiltzailea) {
@@ -137,8 +137,8 @@ public class ErabiltzaileaController {
 
     /**
      *
-     * @param erabiltzaileak
-     * @return
+     * @param erabiltzaileak Erabiltzailea klasearen hainbat instantzia
+     * @return sartutako erabiltzailea eguneratu
      */
     @PutMapping("erabiltzaileak")
     public Long putErabiltzailea(@RequestBody List<Erabiltzailea> erabiltzaileak) {

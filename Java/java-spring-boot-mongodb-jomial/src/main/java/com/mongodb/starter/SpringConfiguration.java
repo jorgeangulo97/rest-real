@@ -25,7 +25,7 @@ public class SpringConfiguration {
 
     /**
      *
-     * @return
+     * @return mongo zerbitzuarekiko konfigurazioa
      */
     @Bean
     public MongoClient mongoClient() {

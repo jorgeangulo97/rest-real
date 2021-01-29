@@ -50,8 +50,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param hotel
-     * @return
+     * @param hotel Hotel klasearen instantzia
+     * @return gordetzen den hotela 
      */
     @Override
     public Hotel save(Hotel hotel) {
@@ -62,8 +62,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param hotel
-     * @return
+     * @param hotel Hotel klasearen instantziaren lista   
+     * @return gordetzen diren hotelak
      */
     @Override
     public List<Hotel> saveAll(List<Hotel> hotel) {
@@ -78,7 +78,7 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @return
+     * @return hotel guztiak bilatu
      */
     @Override
     public List<Hotel> findAll() {
@@ -87,8 +87,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hotelen id-en String lista bat
+     * @return sartutako id-en hotelak bilatu
      */
     @Override
     public List<Hotel> findAll(List<String> ids) {
@@ -97,8 +97,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param kokalekuak
-     * @return
+     * @param kokalekuak hotelaren kokalekua
+     * @return kokalekuaren hotela bilatu
      */
     @Override
     public List<Hotel> findAllbyKokalekua(@RequestParam(value= "kokalekua") String kokalekuak) {
@@ -107,8 +107,8 @@ public class MongoDBHotelRepository implements HotelRepository {
     
     /**
      *
-     * @param id
-     * @return
+     * @param id hotelaren id-a
+     * @return sartutako id-aren hotela bilatu
      */
     @Override
     public Hotel findOne(String id) {
@@ -117,7 +117,7 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @return
+     * @return zenbat hotel daude (zenbakizko balioa)
      */
     @Override
     public long count() {
@@ -126,8 +126,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id hotel baten id-a
+     * @return sartutako id-aren hotela ezabatu
      */
     @Override
     public long delete(String id) {
@@ -136,8 +136,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hoteleen id-en String lista bat
+     * @return sartutako id-en hotelak ezabatu
      */
     @Override
     public long delete(List<String> ids) {
@@ -149,7 +149,7 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @return
+     * @return hotel guztiak ezabatu
      */
     @Override
     public long deleteAll() {
@@ -160,8 +160,8 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param hotel
-     * @return
+     * @param hotel Hotel klasearen instantzia
+     * @return sartutako erabiltzailea eguneratu
      */
     @Override
     public Hotel update(Hotel hotel) {
@@ -171,7 +171,7 @@ public class MongoDBHotelRepository implements HotelRepository {
 
     /**
      *
-     * @param hotels
+     * @param hotels Hotel klasearen instantzien lista
      * @return
      */
     @Override

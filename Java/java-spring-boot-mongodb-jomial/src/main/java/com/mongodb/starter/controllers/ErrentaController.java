@@ -33,8 +33,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param errenta
-     * @return
+     * @param errenta Errenta klasearen instantzia da
+     * @return sartutako errenta gorde
      */
     @PostMapping("errenta")
     @ResponseStatus(HttpStatus.CREATED)
@@ -44,8 +44,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param errentak
-     * @return
+     * @param errentak Errenta klasearen hainbat instantzia dira
+     * @return errenta bat baino gehiago gorde
      */
     @PostMapping("errentak")
     @ResponseStatus(HttpStatus.CREATED)
@@ -55,7 +55,7 @@ public class ErrentaController {
 
     /**
      *
-     * @return
+     * @return errenta guztiak bilatu
      */
     @GetMapping("errentak")
     public List<Errenta> getErrentak() {
@@ -64,8 +64,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id Errenta instantziaren id-a
+     * @return sartutako id-a duen lehengo errenta bilatu
      */
     @GetMapping("errenta/{id}")
     public ResponseEntity<Errenta> getErrenta(@PathVariable String id) {
@@ -77,8 +77,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat errentaren id-ak
+     * @return sartutako id-en errentak bilatu
      */
     @GetMapping("errentak/{ids}")
     public List<Errenta> getErrentak(@PathVariable String ids) {
@@ -88,7 +88,7 @@ public class ErrentaController {
 
     /**
      *
-     * @return
+     * @return zenbat errenta daude (zenbakizko balioa)
      */
     @GetMapping("errentak/count")
     public Long getCount() {
@@ -97,8 +97,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id errenta baten id-a
+     * @return sartutako id-aren errenta ezabatu
      */
     @DeleteMapping("errenta/{id}")
     public Long deleteErrenta(@PathVariable String id) {
@@ -107,8 +107,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids hainbat errentaren id-ak
+     * @return sartutako id-en enrrentak borratu
      */
     @DeleteMapping("errentak/{ids}")
     public Long deleteErrentak(@PathVariable String ids) {
@@ -118,7 +118,7 @@ public class ErrentaController {
 
     /**
      *
-     * @return
+     * @return errenta guztiak borratu
      */
     @DeleteMapping("errentak")
     public Long deleteErrentak() {
@@ -127,8 +127,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param errenta
-     * @return
+     * @param errenta Errenta klasearen instantzia bat
+     * @return sartutako errenta eguneratu
      */
     @PutMapping("errenta")
     public Errenta putErrenta(@RequestBody Errenta errenta) {
@@ -137,8 +137,8 @@ public class ErrentaController {
 
     /**
      *
-     * @param errentak
-     * @return
+     * @param errentak Errenta klasearen hainbat instantzia
+     * @return sartutako errentak eguneratu
      */
     @PutMapping("errentak")
     public Long putErrenta(@RequestBody List<Errenta> errentak) {

@@ -15,7 +15,7 @@ public class Argazkia {
     private String argazkia;
 
     /**
-     *
+     *Argazkia klasearen konstruktorea
      */
     public Argazkia() {
         
@@ -23,7 +23,7 @@ public class Argazkia {
 
     /**
      *
-     * @param argazkia
+     * @param argazkia argazkiaren izena 
      */
     public Argazkia(String argazkia) {
         this.argazkia = argazkia;
@@ -31,7 +31,7 @@ public class Argazkia {
 
     /**
      *
-     * @return
+     * @return argazkiaren izena 
      */
     public String getArgazkia() {
         return argazkia;
@@ -39,7 +39,7 @@ public class Argazkia {
 
     /**
      *
-     * @param argazkia
+     * @param argazkia argazkiaren izena 
      */
     public void setArgazkia(String argazkia) {
         this.argazkia = argazkia;
@@ -47,7 +47,7 @@ public class Argazkia {
 
     /**
      *
-     * @return
+     * @return 
      */
     @Override
     public String toString() {

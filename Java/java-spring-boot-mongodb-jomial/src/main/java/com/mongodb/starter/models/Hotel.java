@@ -38,7 +38,7 @@ public class Hotel {
     private List<String> zerbitzuak;
 
     /**
-     *
+     *Hotel klasearen konstruktorea
      */
     public Hotel() {
         
@@ -46,20 +46,20 @@ public class Hotel {
 
     /**
      *
-     * @param hotel_id
-     * @param izena
-     * @param postaKodea
-     * @param distantzia
-     * @param kokalekua
-     * @param herrialdea
-     * @param helbidea
-     * @param izarrak
-     * @param kalifikazioa
-     * @param argazkiak
-     * @param info
-     * @param infoGenerala
-     * @param gelak
-     * @param zerbitzuak
+     * @param hotel_id hotelaren id
+     * @param izena hotelaren izena
+     * @param postaKodea hotelaren posta kodea
+     * @param distantzia hoteletik hirigunera dagoen distantzia 
+     * @param kokalekua hoteleko kokalekua
+     * @param herrialdea hoteleko herrialdea
+     * @param helbidea hoteleko helbidea
+     * @param izarrak hoteleko izar kopurua
+     * @param kalifikazioa hoteleko kalifikazioa
+     * @param argazkiak hoteleko argazkiak
+     * @param info hoteleko informazio garatua
+     * @param infoGenerala hoteleko informazio orokorra
+     * @param gelak hoteleko gelak
+     * @param zerbitzuak hoteleko zebitzuak
      */
     public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, List<Argazkia> argazkiak, String info, String infoGenerala, List<Gela> gelak, List<String> zerbitzuak) {
         this.hotel_id = hotel_id;
@@ -80,7 +80,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hotelaren id 
      */
     public ObjectId getHotel_id() {
         return hotel_id;
@@ -88,7 +88,7 @@ public class Hotel {
 
     /**
      *
-     * @param hotel_id
+     * @param hotel_id hotelaren id 
      */
     public void setHotel_id(ObjectId hotel_id) {
         this.hotel_id = hotel_id;
@@ -96,7 +96,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hotelaren izena 
      */
     public String getIzena() {
         return izena;
@@ -104,7 +104,7 @@ public class Hotel {
 
     /**
      *
-     * @param izena
+     * @param izena hotelaren izena 
      */
     public void setIzena(String izena) {
         this.izena = izena;
@@ -112,7 +112,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hotelaren posta kodea 
      */
     public int getPostaKodea() {
         return postaKodea;
@@ -120,7 +120,7 @@ public class Hotel {
 
     /**
      *
-     * @param postaKodea
+     * @param postaKodea hotelaren posta kodea 
      */
     public void setPostaKodea(int postaKodea) {
         this.postaKodea = postaKodea;
@@ -128,7 +128,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteletik hirigunera dagoen distantzia 
      */
     public String getDistantzia() {
         return distantzia;
@@ -136,7 +136,7 @@ public class Hotel {
 
     /**
      *
-     * @param distantzia
+     * @param distantzia hoteletik hirigunera dagoen distantzia  
      */
     public void setDistantzia(String distantzia) {
         this.distantzia = distantzia;
@@ -144,7 +144,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko kokalekua 
      */
     public String getKokalekua() {
         return kokalekua;
@@ -152,7 +152,7 @@ public class Hotel {
 
     /**
      *
-     * @param kokalekua
+     * @param kokalekua hoteleko kokalekua 
      */
     public void setKokalekua(String kokalekua) {
         this.kokalekua = kokalekua;
@@ -160,7 +160,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko herrialdea 
      */
     public String getHerrialdea() {
         return herrialdea;
@@ -168,7 +168,7 @@ public class Hotel {
 
     /**
      *
-     * @param herrialdea
+     * @param herrialdea hoteleko herrialdea 
      */
     public void setHerrialdea(String herrialdea) {
         this.herrialdea = herrialdea;
@@ -176,7 +176,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko helbidea 
      */
     public String getHelbidea() {
         return helbidea;
@@ -184,7 +184,7 @@ public class Hotel {
 
     /**
      *
-     * @param helbidea
+     * @param helbidea hoteleko helbidea 
      */
     public void setHelbidea(String helbidea) {
         this.helbidea = helbidea;
@@ -192,7 +192,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko izar kopurua 
      */
     public int getIzarrak() {
         return izarrak;
@@ -200,7 +200,7 @@ public class Hotel {
 
     /**
      *
-     * @param izarrak
+     * @param izarrak hoteleko izar kopurua 
      */
     public void setIzarrak(int izarrak) {
         this.izarrak = izarrak;
@@ -208,7 +208,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko kalifikazioa 
      */
     public double getKalifikazioa() {
         return kalifikazioa;
@@ -216,7 +216,7 @@ public class Hotel {
 
     /**
      *
-     * @param kalifikazioa
+     * @param kalifikazioa hoteleko kalifikazioa 
      */
     public void setKalifikazioa(double kalifikazioa) {
         this.kalifikazioa = kalifikazioa;
@@ -224,7 +224,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko argazkiak 
      */
     public List<Argazkia> getArgazkiak() {
         return argazkiak;
@@ -232,7 +232,7 @@ public class Hotel {
 
     /**
      *
-     * @param argazkiak
+     * @param argazkiak hoteleko argazkiak 
      */
     public void setArgazkiak(List<Argazkia> argazkiak) {
         this.argazkiak = argazkiak;
@@ -240,7 +240,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko informazio garatua
      */
     public String getInfo() {
         return info;
@@ -248,7 +248,7 @@ public class Hotel {
 
     /**
      *
-     * @param info
+     * @param info hoteleko informazio garatua
      */
     public void setInfo(String info) {
         this.info = info;
@@ -256,7 +256,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hotelaren informazio orokorra
      */
     public String getInfoGenerala() {
         return infoGenerala;
@@ -264,7 +264,7 @@ public class Hotel {
 
     /**
      *
-     * @param infoGenerala
+     * @param infoGenerala hotelaren informazio orokorra
      */
     public void setInfoGenerala(String infoGenerala) {
         this.infoGenerala = infoGenerala;
@@ -272,7 +272,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko gelak
      */
     public List<Gela> getGelak() {
         return gelak;
@@ -280,7 +280,7 @@ public class Hotel {
 
     /**
      *
-     * @param gelak
+     * @param gelak hoteleko gelak
      */
     public void setGelak(List<Gela> gelak) {
         this.gelak = gelak;
@@ -288,7 +288,7 @@ public class Hotel {
 
     /**
      *
-     * @return
+     * @return hoteleko zerbitzuak
      */
     public List<String> getZerbitzuak() {
         return zerbitzuak;
@@ -296,7 +296,7 @@ public class Hotel {
 
     /**
      *
-     * @param zerbitzuak
+     * @param zerbitzuak hoteleko zerbitzuak
      */
     public void setZerbitzuak(List<String> zerbitzuak) {
         this.zerbitzuak = zerbitzuak;

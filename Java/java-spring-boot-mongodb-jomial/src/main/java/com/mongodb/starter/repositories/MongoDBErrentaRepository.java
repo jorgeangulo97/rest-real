@@ -49,8 +49,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param errenta
-     * @return
+     * @param errenta Errenta klasearen instantzia
+     * @return gordetzen den errenta
      */
     @Override
     public Errenta save(Errenta errenta) {
@@ -61,8 +61,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param errenta
-     * @return
+     * @param errenta Errenta instantziaren lista
+     * @return gordetzen diren errentak
      */
     @Override
     public List<Errenta> saveAll(List<Errenta> errenta) {
@@ -77,7 +77,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @return
+     * @return errenta guztiak bilatu
      */
     @Override
     public List<Errenta> findAll() {
@@ -86,8 +86,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids errenten id-en String lista bat
+     * @return sartutako id-en errentak bilatu
      */
     @Override
     public List<Errenta> findAll(List<String> ids) {
@@ -96,8 +96,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id errentaren id-a
+     * @return sartutako id-aren errenta bilatu
      */
     @Override
     public Errenta findOne(String id) {
@@ -106,7 +106,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @return
+     * @return zenbat errenta daude (zenbakizko balioa)
      */
     @Override
     public long count() {
@@ -115,8 +115,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id errenta baten id-a
+     * @return sartutako id-aren errenta ezabatu
      */
     @Override
     public long delete(String id) {
@@ -125,8 +125,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param ids
-     * @return
+     * @param ids errenten id-en String lista bat
+     * @return sartutako id-en errentak ezabatu
      */
     @Override
     public long delete(List<String> ids) {
@@ -138,7 +138,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @return
+     * @return errenta guztiak ezabatu
      */
     @Override
     public long deleteAll() {
@@ -149,8 +149,8 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param errenta
-     * @return
+     * @param errenta Errenta klasearen instantzia
+     * @return sartutako errenta eguneratu
      */
     @Override
     public Errenta update(Errenta errenta) {
@@ -160,7 +160,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
-     * @param errentak
+     * @param errentak Errenta klasearen instantzien lista
      * @return
      */
     @Override
