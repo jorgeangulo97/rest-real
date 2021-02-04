@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 com.mongodb.starter
 com.mongodb.starter.controllers
 com.mongodb.starter.models
 com.mongodb.starter.repositories
+=======
+com.mongodb.starter
+com.mongodb.starter.controllers
+com.mongodb.starter.models
+com.mongodb.starter.repositories
+>>>>>>> 2a180561bad2bb11f09a876fc031677a5601c75b
