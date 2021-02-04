@@ -49,7 +49,7 @@ public class ErabiltzaileaController {
      */
     @PostMapping("erabiltzaileak")
     @ResponseStatus(HttpStatus.CREATED)
-    public List<Erabiltzailea> postErabiltzailea(@RequestBody List<Erabiltzailea> erabiltzaileak) {
+    public List<Erabiltzailea> postErabiltzaileak(@RequestBody List<Erabiltzailea> erabiltzaileak) {
         return erabiltzaileaRepository.saveAll(erabiltzaileak);
     }
 

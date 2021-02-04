@@ -55,7 +55,7 @@ public class MongoDBHotelRepository implements HotelRepository {
      */
     @Override
     public Hotel save(Hotel hotel) {
-        hotel.setHotel_id(new ObjectId());
+        hotel.setId(new ObjectId());
         hotelCollection.insertOne(hotel);
         return hotel;
     }
@@ -69,7 +69,7 @@ public class MongoDBHotelRepository implements HotelRepository {
     public List<Hotel> saveAll(List<Hotel> hotel) {
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> {
-                hotel.forEach(h -> h.setHotel_id(new ObjectId()));
+                hotel.forEach(h -> h.setId(new ObjectId()));
                 hotelCollection.insertMany(clientSession, hotel);
                 return hotel;
             }, txnOptions);
@@ -166,7 +166,7 @@ public class MongoDBHotelRepository implements HotelRepository {
     @Override
     public Hotel update(Hotel hotel) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
-        return hotelCollection.findOneAndReplace(eq("_id", hotel.getHotel_id()), hotel, options);
+        return hotelCollection.findOneAndReplace(eq("_id", hotel.getId()), hotel, options);
     }
 
     /**
@@ -177,7 +177,7 @@ public class MongoDBHotelRepository implements HotelRepository {
     @Override
     public long update(List<Hotel> hotels) {
         List<WriteModel<Hotel>> writes = hotels.stream()
-                                                 .map(h -> new ReplaceOneModel<>(eq("_id", h.getHotel_id()), h))
+                                                 .map(h -> new ReplaceOneModel<>(eq("_id", h.getId()), h))
                                                  .collect(Collectors.toList());
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> hotelCollection.bulkWrite(clientSession, writes).getModifiedCount(), txnOptions);

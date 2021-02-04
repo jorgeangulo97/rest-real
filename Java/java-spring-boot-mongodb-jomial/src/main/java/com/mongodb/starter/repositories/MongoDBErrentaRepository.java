@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -54,7 +55,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
      */
     @Override
     public Errenta save(Errenta errenta) {
-        errenta.setErrenta_id(new ObjectId());
+        errenta.setId(new ObjectId());
         errentaCollection.insertOne(errenta);
         return errenta;
     }
@@ -68,7 +69,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
     public List<Errenta> saveAll(List<Errenta> errenta) {
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> {
-                errenta.forEach(e -> e.setErrenta_id(new ObjectId()));
+                errenta.forEach(e -> e.setId(new ObjectId()));
                 errentaCollection.insertMany(clientSession, errenta);
                 return errenta;
             }, txnOptions);
@@ -96,6 +97,16 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
 
     /**
      *
+     * @param emaila errentaren emaila
+     * @return sartutako emailaren araberaz objektu guztiak bueltatzen ditu.
+     */
+    @Override
+    public List<Errenta> findAllEmail(@RequestParam(value="emaila") String emaila) {
+        return errentaCollection.find(eq("emaila", emaila)).into(new ArrayList<>());
+    }
+    
+    /**
+     *
      * @param id errentaren id-a
      * @return sartutako id-aren errenta bilatu
      */
@@ -103,7 +114,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
     public Errenta findOne(String id) {
         return errentaCollection.find(eq("_id", new ObjectId(id))).first();
     }
-
+    
     /**
      *
      * @return zenbat errenta daude (zenbakizko balioa)
@@ -155,7 +166,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
     @Override
     public Errenta update(Errenta errenta) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
-        return errentaCollection.findOneAndReplace(eq("_id", errenta.getErrenta_id()), errenta, options);
+        return errentaCollection.findOneAndReplace(eq("_id", errenta.getId()), errenta, options);
     }
 
     /**
@@ -166,7 +177,7 @@ public class MongoDBErrentaRepository implements ErrentaRepository {
     @Override
     public long update(List<Errenta> errentak) {
         List<WriteModel<Errenta>> writes = errentak.stream()
-                                                 .map(e -> new ReplaceOneModel<>(eq("_id", e.getErrenta_id()), e))
+                                                 .map(e -> new ReplaceOneModel<>(eq("_id", e.getId()), e))
                                                  .collect(Collectors.toList());
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> errentaCollection.bulkWrite(clientSession, writes).getModifiedCount(), txnOptions);

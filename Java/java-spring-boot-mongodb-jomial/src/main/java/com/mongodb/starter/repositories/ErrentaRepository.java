@@ -38,7 +38,15 @@ public interface ErrentaRepository {
      * @return
      */
     List<Errenta> findAll(List<String> ids);
+    
+    /**
+     *
+     * @param emaila
+     * @return
+     */
 
+    List<Errenta> findAllEmail(String emaila);
+    
     /**
      *
      * @param id

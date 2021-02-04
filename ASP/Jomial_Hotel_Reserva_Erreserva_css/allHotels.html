@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Bilbao </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx6eC2e5gFR8ywJLZwpGLm49NK3C9WF0o&callback=initMap"
+        defer></script>
+
+
+</head>
+
+<body>
+    <header id="myHeader">
+        <nav class="navbar navbar bg justify-content-between">
+            <a class="navbar-brand"><img src="logo.png"></a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="containerhandia">
+        <h3>CENTRICO Y BONITO APARTAMENTO EN BILBAO</h3>
+        <div>
+            <img class="estrella" src="iconfinder_star_326703 (1).png"><span><strong> 4.97</strong> ·
+                <u>Bilbao</u></span>
+        </div>
+        <div class="top">
+            <ul>
+                <li><a href="#img_3"><img
+                            src="https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=46a85a1451e47aea5152ade8299f2894"></a>
+                </li>
+
+                <li><a href="#img_5"><img
+                            src="https://image.freepik.com/free-photo/sunlight-in-the-forest_1004-9.jpg"></a></li>
+                <li><a href="#img_6"><img
+                            src="https://image.freepik.com/free-photo/road-curve-landscape_426-19324358.jpg"></a></li>
+
+            </ul>
+            <a href="#_3" class="lightbox trans" id="img_3"><img
+                    src="https://farm8.staticflickr.com/7564/16097104758_e60521f7fa_b.jpg"></a>
+
+        </div>
+        <form>
+        <div class="busqueda" id="myDiv">
+            <h2>Agrega las fechas para ver los precios</h2><br>
+            <table>
+                <tr>
+                  <th>Fecha de entrada</th>
+                  <th>Fecha de salida</th>
+                </tr>
+             
+                <tr>
+                  <td>      <input type="text" class="other-input" onfocus="(this.type='date')" placeholder="Fecha de llegada" name="date1" required></td>
+                  <td>      <input type="text" class="other-input" onfocus="(this.type='date')" placeholder="Fecha de salida" name="date2" required></td>
+                </tr>
+                <tr>
+                  <td colspan="2"> <label for="browser">Huespedes:</label>
+                    <input list="browsers" name="browser" id="browser"  type ="number" min="1" max="2" required>
+                    <datalist id="browsers">
+                      <option value="1">
+                      <option value="2">
+            
+                    </datalist>
+                   </td>
+                </tr>
+              </table><br>
+              <button onclick="checkdate(date1,date2)" type="submit">Enviar</button>
+        </div>
+    </form>
+        <div class="containerTxikia">
+            <h4><strong>Suite de invitados entera</strong></h4>
+            <h8>2 huéspedes · Fecha de entrada: · Fecha de salida: </h8>
+            <hr>
+            <section>
+             
+                <h4><strong>Servicios</strong></h4><br>
+                <div >
+
+                    <ul class="check-list">
+                        <li>Head</li>
+                        <li>Shoulders</li>
+                        <li>Knees</li>
+                        <li>Toes</li>
+                    </ul>
+                
+                </div>
+              
+            </section>
+            <hr>
+            <h8>Piso bien iluminado. Vivo en él. Habitacion ofrecida grande, silenciosa y luminosa. Salón con sofá,
+                juegos de mesa y libros. Cuadros(pinturas) en las paredes. Calefacción ajustable. Ambiente tranquilo.
+                Ubicación del piso muy bien comunicado a través de bus con el resto de la ciudad. A 10 minutos andando
+                de la estación Delicias y del campus universitario</h8>
+            <hr>
+            <h4><strong>Ubicacion</strong></h4>
+            <h8>Bilbao,Vizcaya,España</h8>
+            <div id="map">
+
+            </div><br>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46486.91698136041!2d-2.9685838215031417!3d43.26331815882461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4e27664b89b9%3A0x6534acc41e95a645!2sBilbao%2C%20Vizcaya!5e0!3m2!1ses!2ses!4v1611742883581!5m2!1ses!2ses"
+                width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+
+            <hr>
+            <h4><strong>Habitaciones</strong></h4><br>
+            <div>
+                <span class="b"><strong>Habitacion 1</strong><br>1 cama individual</span> <span
+                    class="b"><strong>Habitacion 1</strong><br>1 cama individual</span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+        <footer>
+            <div class="row my-5 justify-content-center py-5">
+                <div class="col-11">
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                            <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                            <ul class="list-unstyled">
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Blog</li>
+                                <li>Portfolio</li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Direccion</b></h6>
+                            <p class="mb-1">6,Legaño Kalea</p>
+                            <p>Berriz,Vizcaya</p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                            <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Jomial All Rights Reserved.</small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>Contacto</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>jomial@gmail.com</small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                            <h6 class="text-muted bold-text"><b>Contacto Importante</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> jomial@uni.eus</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

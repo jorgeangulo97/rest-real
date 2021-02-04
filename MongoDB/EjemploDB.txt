@@ -2,7 +2,7 @@ mongoimport --host=localhost:27017 --db=jomial --collection=hotel --file=hotel.j
 
 Jomial
 	Hotel:
-		-ObjectId hotel_id 
+		-ObjectId id
 		-String izena 
 		-int postaKodea 
 		-String distantzia 
@@ -18,7 +18,7 @@ Jomial
 		-List<String> zerbitzuak 
 	
 	Erabiltzailea:
-		-ObjectId erabiltzailea_id
+		-ObjectId id
 		-String izena
 		-String abizena
 		-String emaila
@@ -26,13 +26,15 @@ Jomial
 		-String pasahitza
 	
 	Errenta: 
-		-ObjectId errenta_id
+		-ObjectId id
 		-String hasiera_data
 		-String amaiera_data
-		-Hotel hotel 
-		-Erabiltzailea erabiltzailea 
+		-String hotel_izena
+		-int gela
+		-double prezio_total
+		-String emaila
 		-int txartel_zenbakia
 		-String txartel_titularra
-		-data txartel_iraunginpena
+		-String txartel_iraunginpena
 		-int txartel_cvv
 		

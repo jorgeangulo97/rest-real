@@ -54,7 +54,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
      */
     @Override
     public Erabiltzailea save(Erabiltzailea erabiltzailea) {
-        erabiltzailea.setErabiltzailea_id(new ObjectId());
+        erabiltzailea.setId(new ObjectId());
         erabiltzaileaCollection.insertOne(erabiltzailea);
         return erabiltzailea;
     }
@@ -68,7 +68,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
     public List<Erabiltzailea> saveAll(List<Erabiltzailea> erabiltzailea) {
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> {
-                erabiltzailea.forEach(e -> e.setErabiltzailea_id(new ObjectId()));
+                erabiltzailea.forEach(e -> e.setId(new ObjectId()));
                 erabiltzaileaCollection.insertMany(clientSession, erabiltzailea);
                 return erabiltzailea;
             }, txnOptions);
@@ -155,7 +155,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
     @Override
     public Erabiltzailea update(Erabiltzailea erabiltzailea) {
         FindOneAndReplaceOptions options = new FindOneAndReplaceOptions().returnDocument(AFTER);
-        return erabiltzaileaCollection.findOneAndReplace(eq("_id", erabiltzailea.getErabiltzailea_id()), erabiltzailea, options);
+        return erabiltzaileaCollection.findOneAndReplace(eq("_id", erabiltzailea.getId()), erabiltzailea, options);
     }
 
     /**
@@ -166,7 +166,7 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
     @Override
     public long update(List<Erabiltzailea> erabiltzaileak) {
         List<WriteModel<Erabiltzailea>> writes = erabiltzaileak.stream()
-                                                 .map(e -> new ReplaceOneModel<>(eq("_id", e.getErabiltzailea_id()), e))
+                                                 .map(e -> new ReplaceOneModel<>(eq("_id", e.getId()), e))
                                                  .collect(Collectors.toList());
         try (ClientSession clientSession = client.startSession()) {
             return clientSession.withTransaction(() -> erabiltzaileaCollection.bulkWrite(clientSession, writes).getModifiedCount(), txnOptions);

@@ -49,7 +49,7 @@ public class ErrentaController {
      */
     @PostMapping("errentak")
     @ResponseStatus(HttpStatus.CREATED)
-    public List<Errenta> postErrenta(@RequestBody List<Errenta> errentak) {
+    public List<Errenta> postErrentak(@RequestBody List<Errenta> errentak) {
         return errentaRepository.saveAll(errentak);
     }
 
@@ -73,6 +73,16 @@ public class ErrentaController {
         if (errenta == null)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         return ResponseEntity.ok(errenta);
+    }
+    
+    /**
+     *
+     * @param emaila Errenta instantziaren emaila
+     * @return sartutako emaila duen errenta guztiak bilatzen ditu
+     */
+    @GetMapping("errenta/emaila")
+    public List<Errenta> getErrentaEmail(@RequestParam(value="emaila") String emaila) {
+        return errentaRepository.findAllEmail(emaila);
     }
 
     /**

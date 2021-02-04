@@ -19,7 +19,7 @@ import org.bson.types.ObjectId;
 public class Erabiltzailea{
 
     @JsonSerialize(using = ToStringSerializer.class)
-    private ObjectId erabiltzailea_id;
+    private ObjectId id;
     private String izena;
     private String abizena;
     private String emaila;
@@ -34,15 +34,15 @@ public class Erabiltzailea{
 
     /**
      *
-     * @param erabiltzailea_id erabiltzailearen id-a
+     * @param id erabiltzailearen id-a
      * @param izena erabiltzailearen izena
      * @param abizena erabiltzailearen abizena
      * @param emaila erabiltzailearen emaila
      * @param erabiltzailea erabiltzailearen erabiltzailea
      * @param pasahitza erabiltzailearen pasahitza
      */
-    public Erabiltzailea(ObjectId erabiltzailea_id, String izena, String abizena, String emaila, String erabiltzailea, String pasahitza) {
-        this.erabiltzailea_id = erabiltzailea_id;
+    public Erabiltzailea(ObjectId id, String izena, String abizena, String emaila, String erabiltzailea, String pasahitza) {
+        this.id = id;
         this.izena = izena;
         this.abizena = abizena;
         this.emaila = emaila;
@@ -54,16 +54,16 @@ public class Erabiltzailea{
      *
      * @return erabiltzailearen id
      */
-    public ObjectId getErabiltzailea_id() {
-        return erabiltzailea_id;
+    public ObjectId getId() {
+        return id;
     }
 
     /**
      *
-     * @param erabiltzailea_id erabiltzailearen id
+     * @param id erabiltzailearen id
      */
-    public void setErabiltzailea_id(ObjectId erabiltzailea_id) {
-        this.erabiltzailea_id = erabiltzailea_id;
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     /**
@@ -152,7 +152,7 @@ public class Erabiltzailea{
      */
     @Override
     public String toString() {
-        return "Erabiltzailea{" + "erabiltzailea_id=" + erabiltzailea_id + ", izena=" + izena + ", abizena=" + abizena + ", emaila=" + emaila + ", erabiltzailea=" + erabiltzailea + ", pasahitza=" + pasahitza + '}';
+        return "Erabiltzailea{" + "erabiltzailea_id=" + id + ", izena=" + izena + ", abizena=" + abizena + ", emaila=" + emaila + ", erabiltzailea=" + erabiltzailea + ", pasahitza=" + pasahitza + '}';
     }
     
     /**
@@ -161,7 +161,7 @@ public class Erabiltzailea{
      */
     @Override
     public int hashCode() {
-        return Objects.hash(erabiltzailea_id, izena, abizena, emaila, erabiltzailea, pasahitza);
+        return Objects.hash(id, izena, abizena, emaila, erabiltzailea, pasahitza);
     }
 
     /**
@@ -196,7 +196,7 @@ public class Erabiltzailea{
         if (!Objects.equals(this.pasahitza, other.pasahitza)) {
             return false;
         }
-        if (!Objects.equals(this.erabiltzailea_id, other.erabiltzailea_id)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;

@@ -22,7 +22,7 @@ import java.util.Objects;
 public class Hotel {
 
     @JsonSerialize(using = ToStringSerializer.class)
-    private ObjectId hotel_id;
+    private ObjectId id;
     private String izena;
     private int postaKodea;
     private String distantzia;
@@ -46,7 +46,7 @@ public class Hotel {
 
     /**
      *
-     * @param hotel_id hotelaren id
+     * @param id
      * @param izena hotelaren izena
      * @param postaKodea hotelaren posta kodea
      * @param distantzia hoteletik hirigunera dagoen distantzia 
@@ -61,8 +61,8 @@ public class Hotel {
      * @param gelak hoteleko gelak
      * @param zerbitzuak hoteleko zebitzuak
      */
-    public Hotel(ObjectId hotel_id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, List<Argazkia> argazkiak, String info, String infoGenerala, List<Gela> gelak, List<String> zerbitzuak) {
-        this.hotel_id = hotel_id;
+    public Hotel(ObjectId id, String izena, int postaKodea, String distantzia, String kokalekua, String herrialdea, String helbidea, int izarrak, double kalifikazioa, List<Argazkia> argazkiak, String info, String infoGenerala, List<Gela> gelak, List<String> zerbitzuak) {
+        this.id = id;
         this.izena = izena;
         this.postaKodea = postaKodea;
         this.distantzia = distantzia;
@@ -82,16 +82,16 @@ public class Hotel {
      *
      * @return hotelaren id 
      */
-    public ObjectId getHotel_id() {
-        return hotel_id;
+    public ObjectId getId() {
+        return id;
     }
 
     /**
      *
-     * @param hotel_id hotelaren id 
+     * @param id hotelaren id 
      */
-    public void setHotel_id(ObjectId hotel_id) {
-        this.hotel_id = hotel_id;
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     /**
@@ -308,7 +308,7 @@ public class Hotel {
      */
     @Override
     public String toString() {
-        return "Hotel{" + "hotel_id=" + hotel_id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", gelak=" + gelak + ", zerbitzuak=" + zerbitzuak + '}';
+        return "Hotel{" + "hotel_id=" + id + ", izena=" + izena + ", postaKodea=" + postaKodea + ", distantzia=" + distantzia + ", kokalekua=" + kokalekua + ", herrialdea=" + herrialdea + ", helbidea=" + helbidea + ", izarrak=" + izarrak + ", kalifikazioa=" + kalifikazioa + ", argazkiak=" + argazkiak + ", info=" + info + ", infoGenerala=" + infoGenerala + ", gelak=" + gelak + ", zerbitzuak=" + zerbitzuak + '}';
     }
 
     /**
@@ -317,7 +317,7 @@ public class Hotel {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(hotel_id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, argazkiak, info, infoGenerala, gelak, zerbitzuak);
+        return Objects.hash(id, izena, postaKodea, distantzia, kokalekua, herrialdea, helbidea, izarrak, kalifikazioa, argazkiak, info, infoGenerala, gelak, zerbitzuak);
     }
 
     /**
@@ -367,7 +367,7 @@ public class Hotel {
         if (!Objects.equals(this.infoGenerala, other.infoGenerala)) {
             return false;
         }
-        if (!Objects.equals(this.hotel_id, other.hotel_id)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         if (!Objects.equals(this.argazkiak, other.argazkiak)) {

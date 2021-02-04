@@ -68,11 +68,9 @@ public class HotelController {
      * @return sartutako id-a duen lehengo hotela bilatu
      */
     @GetMapping("hotel/{id}")
-    public ResponseEntity<Hotel> getHotel(@PathVariable String id) {
+    public Hotel getHotel(@PathVariable String id) {
         Hotel hotel = hotelRepository.findOne(id);
-        if (hotel == null)
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        return ResponseEntity.ok(hotel);
+        return hotel;
     }
 
     /**
