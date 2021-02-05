@@ -1,0 +1,66 @@
+﻿<link rel="stylesheet" href="~/Content/stylesLogin.css">
+<title>Registrate en nuestra pagina</title>
+@model IEnumerable<Jomial_Final.Models.Hotel>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>Iniciar Sesion</h1>
+        <div class="main-agileinfo">
+            @using (Html.BeginForm("LoginComprobatu", "Login"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="agileits-top">
+                    <form action="#" method="post" >
+                        <input class="text email" type="text" name="usuario" placeholder="Usuario" required="">
+                        <input class="text" type="password" name="password1" placeholder="Contraseña" required="">
+                        <input class="text w3lpass" type="password" name="password2" placeholder="Repetir Contraseña" required="">
+                        <div class="wthree-text">
+                            <label class="anim">
+                                <input type="checkbox" class="checkbox" required="">
+                                <span>Acepto los terminos de licencia.</span>
+                            </label>
+                            <div class="clear"> </div>
+                        </div>
+                        <input type="submit" onsubmit="return checkPassword()" value="Iniciar Sesion">
+                    </form>
+                    <p>¿No tienes una cuenta? <a href="@Url.Action("Register", "Login")"> Registrate ahora!</a></p>
+                </div>
+            }
+            </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            <p>© 2021 Jomial Signup Form. All rights reserved | Design by Mikel Mañeru</a></p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+<script>
+    function checkPassword() {
+        password1 = form.password1.value;
+        password2 = form.password2.value;
+
+
+        // If Not same return False.     
+        if (password1 != password2) {
+            alert("\nPassword did not match: Please try again...");
+            return false;
+        }
+
+        else {
+        
+            return true;
+        }
+    } 
+</script>

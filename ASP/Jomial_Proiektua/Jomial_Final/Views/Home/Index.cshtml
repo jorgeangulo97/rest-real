@@ -10,21 +10,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="hover-1" href="@Url.Action("HotelesTOP", "Home")">Hoteles mas cercanos</a>
+                    <a class="hover-1" href=""  onclick="return confirm('Tienes que iniciar sesion!')">Hoteles mas cercanos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="hover-1" href="@Url.Action("Opinion", "Home")">Opiniones de nuestros clientes</a>
+                    <a class="hover-1" href=""  onclick="return confirm('Tienes que iniciar sesion!')">Opiniones de nuestros clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="hover-1" href="@Url.Action("About", "Home")">Sobre nosotros</a>
+                    <a class="hover-1" href=""  onclick="return confirm('Tienes que iniciar sesion!')">Sobre nosotros</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="@Url.Action("Login", "Login")">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="@Url.Action("Register", "Login")">Register</a>
                 </li>
             </ul>
         </div>
@@ -53,9 +53,7 @@
 <br>
 <br>
 <br>
-@using (Html.BeginForm("BusquedaHotel", "Bilatu"))
-{
-    @Html.AntiForgeryToken()
+
     <form>
         <div class="bilatu">
             <div class="testuaForm">
@@ -75,7 +73,7 @@
                 <input type="number" class="other-input" placeholder="Huespedes" min="1" max="100" id="fname" name="huespe" required>
             </div>
             <div class="testuaForm" style="border-right: none;padding-right: 0; background-color: none;">
-                <button type="submit" class="btn-circle btn-xl"><span><strong>Buscar</strong></span></button>
+                <button type="submit" class="btn-circle btn-xl"  onclick="return confirm('Tienes que iniciar sesion!')"><span><strong>Buscar</strong></span></button>
             </div>
 
         </div>
@@ -90,11 +88,11 @@
                             <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
                         </div>
                         <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                            <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                            <h6 class="mb-3 mb-lg-4 bold-text "><b>Creadores</b></h6>
                             <ul class="list-unstyled">
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Blog</li>
+                                <li>Mikel Mañeru</li>
+                                <li>Jorge Angulo</li>
+                                <li>Alvaro Viguera</li>
                                 <li>Portfolio</li>
                             </ul>
                         </div>

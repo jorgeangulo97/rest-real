@@ -4,10 +4,10 @@
 
 <header id="myHeader">
     <nav class="navbar1 navbar bg justify-content-between">
-        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Imagenes/logo.png"></a>
+        <a class="navbar-brand" href="@Url.Action("IndexLog", "Home")"><img src="~/Imagenes/logo.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="@Url.Action("Index", "Home")">Cerrar Sesion</a>
             </li>
         </ul>
     </nav>
@@ -16,7 +16,7 @@
     <div class="containerHandia">
         <h5>Más de 300 alojamientos</h5>
         <h2>Encuentra lugares para hospedarte cerca de ti</h2>
-        <h6>Antes de reservar, revisa las restricciones de viaje relacionadas con el coronavirus.Más información</h6><br>
+        <h6>Antes de reservar, revisa las restricciones de viaje relacionadas con el coronavirus.<a href="https://es.wikipedia.org/wiki/Pandemia_de_COVID-19">Más información</a></h6><br>
         <div class="containerTxikia">
             <h4><strong>@ViewData["hotelIzena"]</strong></h4><span class="infogeneral"><strong>Fecha de entrada: </strong> @ViewData["dataIn"] · <strong>Fecha de salida: </strong> @ViewData["dataOut"] · <strong>Huespedes: </strong> @ViewData["huespe"]</span><br><br>
             @foreach (var item in Model)

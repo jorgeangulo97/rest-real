@@ -74,6 +74,14 @@ public class ErabiltzaileaController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         return ResponseEntity.ok(erabiltzailea);
     }
+    
+    @GetMapping("erabiltzailea/erabiltzailea/pasahitza")
+    public ResponseEntity<Erabiltzailea> getErabiltzaileaUser(@RequestParam(value= "erabiltzailea") String erabiltzailea, @RequestParam(value= "pasahitza") String pasahitza) {
+        Erabiltzailea erabiltzaile = erabiltzaileaRepository.findOneUser(erabiltzailea, pasahitza);
+        if (erabiltzaile == null)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        return ResponseEntity.ok(erabiltzaile);
+    }
 
     /**
      *

@@ -7,6 +7,7 @@ import com.mongodb.WriteConcern;
 import com.mongodb.client.ClientSession;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.and;
 import com.mongodb.client.model.FindOneAndReplaceOptions;
 import com.mongodb.client.model.ReplaceOneModel;
 import com.mongodb.client.model.WriteModel;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.ReturnDocument.AFTER;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -104,6 +106,10 @@ public class MongoDBErabiltzaileaRepository implements ErabiltzaileaRepository {
         return erabiltzaileaCollection.find(eq("_id", new ObjectId(id))).first();
     }
 
+    @Override
+    public Erabiltzailea findOneUser(@RequestParam String erabiltzailea, @RequestParam String pasahitza) {
+        return erabiltzaileaCollection.find(and(eq("erabiltzailea", erabiltzailea), eq("pasahitza", pasahitza))).first(); 
+    }
     /**
      *
      * @return zenbat erabiltzaile daude (zenbakizko balioa)

@@ -46,6 +46,7 @@ public interface ErabiltzaileaRepository {
      */
     Erabiltzailea findOne(String id);
 
+    Erabiltzailea findOneUser(String izena, String pasahitza);
     /**
      *
      * @return

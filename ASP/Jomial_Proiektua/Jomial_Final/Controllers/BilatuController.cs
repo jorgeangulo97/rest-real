@@ -15,10 +15,7 @@ namespace Jomial_Final.Controllers
     {
         // GET: Bilatu
         string Baseurl = "http://192.168.72.4:8080/api/";
-        public ActionResult Index()
-        {
-            return View();
-        }
+
          [HttpPost]
         public async Task<ActionResult> BusquedaHotel(FormCollection collection)
         {

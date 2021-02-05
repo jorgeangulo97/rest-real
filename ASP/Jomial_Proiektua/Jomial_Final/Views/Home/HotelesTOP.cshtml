@@ -3,10 +3,10 @@
 @model IEnumerable<Jomial_Final.Models.Hotel>
 <header id="myHeader">
     <nav class="navbar1 navbar bg justify-content-between">
-        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Imagenes/logo.png"></a>
+        <a class="navbar-brand" href="@Url.Action("IndexLog", "Home")"><img src="~/Imagenes/logo.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="@Url.Action("Index", "Home")">Cerrar Sesion</a>
             </li>
         </ul>
     </nav>
@@ -15,38 +15,38 @@
     <div class="containerHandia">
         <h5>Más de 300 alojamientos · </h5>
         <h2>Encuentra lugares para hospedarte cerca de ti</h2>
-        <h6>Antes de reservar, revisa las restricciones de viaje relacionadas con el coronavirus.Más información</h6><br>
+        <h6>Antes de reservar, revisa las restricciones de viaje relacionadas con el coronavirus.<a href="https://es.wikipedia.org/wiki/Pandemia_de_COVID-19">Más información</a></h6><br>
         <div class="containerTxikia">
 
-        @foreach (var group in Model.GroupBy(item => item.kokalekua))
-        {
-            <br><br>
-            <h4><strong>@Html.Encode(group.Key)</strong></h4><br>
-            foreach (var item in group.Take(5))
+            @foreach (var group in Model.GroupBy(item => item.kokalekua))
             {
-               
-                <a href="@Url.Action("Hotel", "Bilatu", new {id =item.Id})">
-                    <div class="info">
-                        @{
-                            var fuente = item.argazkiak.First().argazkia + ".png";
+                <br><br>
+                <h4><strong>@Html.Encode(group.Key)</strong></h4><br>
+                foreach (var item in group.Take(5))
+                {
 
-                        }
-                        @{
-                            var total = item.gelak.First().kostuGaua * 3;
+                    <a href="@Url.Action("Hotel", "Bilatu", new {id =item.Id})">
+                        <div class="info">
+                            @{
+                                var fuente = item.argazkiak.First().argazkia + ".png";
 
-                        }
-                        <img src="~/Imagenes/FotosHotel/@fuente"><br>
-                        <p style="padding-top: 10px;"><img style="width: 20px;height: 20px;display: inline; vertical-align: text-top;" src="~/Imagenes/iconfinder_star_326703 (1).png"><strong style="padding-top: 12px;">@Html.DisplayFor(modelItem => item.izarrak)</strong>(326)</p>
-                        <h4>@Html.DisplayFor(modelItem => item.izena)</h4>
-                        <h3><strong>Calificaion de nuestros clientes: </strong> @Html.DisplayFor(modelItem => item.kalifikazioa)</h3>
-                        <h4><strong>@Html.DisplayFor(modelItem => item.gelak.First().kostuGaua)€</strong> - por noche.</h4>
-                        <h6><strong>Total:</strong> @total€</h6>
-                    </div>
-                </a>
+                            }
+                            @{
+                                var total = item.gelak.First().kostuGaua * 3;
+
+                            }
+                            <img src="~/Imagenes/FotosHotel/@fuente"><br>
+                            <p style="padding-top: 10px;"><img style="width: 20px;height: 20px;display: inline; vertical-align: text-top;" src="~/Imagenes/iconfinder_star_326703 (1).png"><strong style="padding-top: 12px;">@Html.DisplayFor(modelItem => item.izarrak)</strong>(326)</p>
+                            <h4>@Html.DisplayFor(modelItem => item.izena)</h4>
+                            <h3><strong>Calificaion de nuestros clientes: </strong> @Html.DisplayFor(modelItem => item.kalifikazioa)</h3>
+                            <h4><strong>@Html.DisplayFor(modelItem => item.gelak.First().kostuGaua)€</strong> - por noche.</h4>
+                            <h6><strong>Total:</strong> @total€</h6>
+                        </div>
+                    </a>
+                }
+
             }
-
-        }
- </div>
+        </div>
 
     </div>
 </section>
@@ -79,11 +79,11 @@
                         <h3 class="text-muted mb-md-0 mb-5 bold-text">Jomial.</h3>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>Creadores</b></h6>
                         <ul class="list-unstyled">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Blog</li>
+                            <li>Mikel Mañeru</li>
+                            <li>Jorge Angulo</li>
+                            <li>Alvaro Viguera</li>
                             <li>Portfolio</li>
                         </ul>
                     </div>

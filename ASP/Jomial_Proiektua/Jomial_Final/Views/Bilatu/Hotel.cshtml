@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="~/Content/stylesHotel.css">
 <header id="myHeader">
     <nav class="navbar navbar bg justify-content-between">
-        <a class="navbar-brand"  href="@Url.Action("Index", "Home")"><img src="~/Imagenes/logo.png"></a>
+        <a class="navbar-brand"  href="@Url.Action("IndexLog", "Home")"><img src="~/Imagenes/logo.png"></a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="@Url.Action("Index", "Home")">Cerrar Sesion</a>
             </li>
         </ul>
     </nav>
@@ -58,7 +58,7 @@
     @using (Html.BeginForm("Txartela", "Bilatu"))
     {
         @Html.AntiForgeryToken()
-        <form>
+        <form onSubmit = "return checkPassword(this)">
             <div class="busqueda" id="myDiv">
                 <h2>Agrega las fechas para ver los precios</h2><br>
                 <table>
@@ -220,17 +220,18 @@
         document.getElementById("mytext").value = textContent + " - " + textContent2;
     }
 
-    function  checkdate() {
-        var date1 = document.getElementById('date1').value;
-        var date2 = document.getElementById('date2').value;
-        if (date1 >= date2) {
-            alert("Inserta una fecha adecuada!");
+    function checkdate() {
+        date1 = form.date1.value;
+        date2 = form.date2.value;
+
+        if (date1< date2) {
+            alert("Mete una fecha correcta!");
             return false;
-        } else{
-            return true;   
+        }   else {
+
+            return true;
         }
-        return false;
-    }
+    } 
  
 
 </script>
