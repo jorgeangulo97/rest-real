@@ -22,34 +22,42 @@ namespace Jomial_Final.Controllers
         }
         public async Task<ActionResult> HotelesTOP()
         {
-            List<Hotel> hotel = new List<Hotel>();
-
-            using (var client = new HttpClient())
+            try
             {
-                //Passing service base url  
-                client.BaseAddress = new Uri(Baseurl);
 
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("hotels");
+                List<Hotel> hotel = new List<Hotel>();
 
-                //Checking the response is successful or not which is sent using HttpClient  
-                if (Res.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    //Storing the response details recieved from web api   
-                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Passing service base url  
+                    client.BaseAddress = new Uri(Baseurl);
 
-                    //Deserializing the response recieved from web api and storing into the Employee list  
-                    hotel = JsonConvert.DeserializeObject<List<Hotel>>(EmpResponse);
+                    client.DefaultRequestHeaders.Clear();
+                    //Define request data format  
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                    //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                    HttpResponseMessage Res = await client.GetAsync("hotels");
+
+                    //Checking the response is successful or not which is sent using HttpClient  
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        //Storing the response details recieved from web api   
+                        var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+
+                        //Deserializing the response recieved from web api and storing into the Employee list  
+                        hotel = JsonConvert.DeserializeObject<List<Hotel>>(EmpResponse);
+
+                    }
+                    //returning the employee list to view  
+                    return View(hotel);
                 }
-                //returning the employee list to view  
-                return View(hotel);
             }
-
+            catch
+            {
+                return null;
+            }
         }
         public async Task<ActionResult> About()
         {
@@ -67,6 +75,9 @@ namespace Jomial_Final.Controllers
         // GET: Home/Details/5
         public async Task<ActionResult> IndexLog(String erabiltzaile)
         {
+            try
+            {
+    
             ViewData["erabiltzaile"] = erabiltzaile;
             List<Hotel> hotel = new List<Hotel>();
 
@@ -95,7 +106,11 @@ namespace Jomial_Final.Controllers
                 //returning the employee list to view  
                 return View(hotel);
             }
-      
+              catch
+            {
+                return null;
+            }
+
         }
 
 

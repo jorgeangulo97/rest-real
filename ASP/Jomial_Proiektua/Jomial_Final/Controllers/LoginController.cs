@@ -19,7 +19,10 @@ namespace Jomial_Final.Controllers
         [HttpPost]
         public async Task<ActionResult> insertatu(FormCollection collection)
         {
+            try
+            {
 
+          
             String izena = collection["nombre"];
 
             String abizena = collection["apellido"];
@@ -52,7 +55,11 @@ namespace Jomial_Final.Controllers
                 return RedirectToAction("IndexLog", "Home", new {erabiltzaile = erabiltzailea });
 
             }
-
+            }
+            catch
+            {
+                return null;
+            }
         }
         public ActionResult Login()
         {
@@ -60,6 +67,10 @@ namespace Jomial_Final.Controllers
         }
         public  async Task<ActionResult> LoginComprobatu(FormCollection collection)
         {
+            try
+            {
+
+        
             String usuario = collection["Usuario"];
 
             String contraseña = collection["password1"];
@@ -90,6 +101,10 @@ namespace Jomial_Final.Controllers
                 }
 
               
+            }
+              catch
+            {
+                return null;
             }
         }
         public ActionResult Register()
