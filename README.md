@@ -1,2 +1,2 @@
 # rest-real
-Gure Hoteleen Proiektua
+Gure JOMIAL Hoteleen Proiektua
