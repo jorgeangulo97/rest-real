@@ -70,39 +70,40 @@ namespace Jomial_Final.Controllers
             try
             {
 
-        
-            String usuario = collection["Usuario"];
 
-            String contraseña = collection["password1"];
+                String usuario = collection["Usuario"];
 
-
-
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(Baseurl);
-
-                client.DefaultRequestHeaders.Clear();
-
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                String contraseña = collection["password1"];
 
 
-                HttpResponseMessage Res = await client.GetAsync("erabiltzailea/erabiltzailea/pasahitza?erabiltzailea="+usuario+"&pasahitza="+contraseña);
-      
 
-                if (Res.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-  
-                   return RedirectToAction("IndexLog", "Home", new { erabiltzaile = usuario });
+                    client.BaseAddress = new Uri(Baseurl);
+
+                    client.DefaultRequestHeaders.Clear();
+
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+                    HttpResponseMessage Res = await client.GetAsync("erabiltzailea/erabiltzailea/pasahitza?erabiltzailea=" + usuario + "&pasahitza=" + contraseña);
+
+
+                    if (Res.IsSuccessStatusCode)
+                    {
+
+                        return RedirectToAction("IndexLog", "Home", new { erabiltzaile = usuario });
+
+                    }
+                    else
+                    {
+                        return RedirectToAction("Login", "Login");
+                    }
+
 
                 }
-                else
-                {
-                    return RedirectToAction("Login","Login");
-                }
-
-              
             }
-              catch
+            catch
             {
                 return null;
             }

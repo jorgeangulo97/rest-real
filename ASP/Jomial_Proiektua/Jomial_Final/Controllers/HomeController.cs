@@ -77,36 +77,37 @@ namespace Jomial_Final.Controllers
         {
             try
             {
-    
-            ViewData["erabiltzaile"] = erabiltzaile;
-            List<Hotel> hotel = new List<Hotel>();
 
-            using (var client = new HttpClient())
-            {
-                //Passing service base url  
-                client.BaseAddress = new Uri(Baseurl);
+                ViewData["erabiltzaile"] = erabiltzaile;
+                List<Hotel> hotel = new List<Hotel>();
 
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync("hotels");
-
-                //Checking the response is successful or not which is sent using HttpClient  
-                if (Res.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    //Storing the response details recieved from web api   
-                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+                    //Passing service base url  
+                    client.BaseAddress = new Uri(Baseurl);
 
-                    //Deserializing the response recieved from web api and storing into the Employee list  
-                    hotel = JsonConvert.DeserializeObject<List<Hotel>>(EmpResponse);
+                    client.DefaultRequestHeaders.Clear();
+                    //Define request data format  
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                    //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
+                    HttpResponseMessage Res = await client.GetAsync("hotels");
+
+                    //Checking the response is successful or not which is sent using HttpClient  
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        //Storing the response details recieved from web api   
+                        var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+
+                        //Deserializing the response recieved from web api and storing into the Employee list  
+                        hotel = JsonConvert.DeserializeObject<List<Hotel>>(EmpResponse);
+
+                    }
+                    //returning the employee list to view  
+                    return View(hotel);
                 }
-                //returning the employee list to view  
-                return View(hotel);
             }
-              catch
+            catch
             {
                 return null;
             }
